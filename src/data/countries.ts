@@ -1,4 +1,5 @@
-export const countries = [
+import { CountryType } from "../interfaces";
+export const countries: CountryType[] = [
   {
     code: "AD",
     latitude: 42.546245,
