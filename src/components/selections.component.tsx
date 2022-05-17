@@ -5,7 +5,7 @@ import { countries } from "../data/countries";
 import { CountrySelection } from "../interfaces";
 
 const Selections = () => {
-  const { numGuesses, setNumGuesses, setSelectedCountry } =
+  const { numGuesses, setNumGuesses, selectedCountries, setSelectedCountries } =
     useContext(AppContext);
   const [country, setCountry] = useState<CountrySelection>({
     value: "",
@@ -17,7 +17,10 @@ const Selections = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSelectedCountry(country);
+    const newCountries = selectedCountries;
+    newCountries.push(country);
+    setSelectedCountries(newCountries);
+    console.log(newCountries)
     setNumGuesses(numGuesses + 1);
   };
 

@@ -7,19 +7,24 @@ import Selections from "./components/selections.component";
 interface contextType {
   numGuesses: number;
   setNumGuesses: (numGuesses: number) => void;
-  setSelectedCountry: (country: CountrySelection) => void;
+  selectedCountries: CountrySelection[];
+  setSelectedCountries: (couselectedCountriesntry: CountrySelection[]) => void;
 }
 
 export const AppContext = createContext<contextType>({} as contextType);
 
 function App() {
   const [numGuesses, setNumGuesses] = useState<number>(0);
-  const [selectedCountry, setSelectedCountry] = useState<CountrySelection>({
-    value: "",
-    label: "",
-  });
+  const [selectedCountries, setSelectedCountries] = useState<
+    CountrySelection[]
+  >([] as CountrySelection[]);
 
-  const value = { numGuesses, setNumGuesses, setSelectedCountry };
+  const value = {
+    numGuesses,
+    setNumGuesses,
+    selectedCountries,
+    setSelectedCountries,
+  };
   return (
     <div>
       <AppContext.Provider value={value}>
