@@ -4,3 +4,8 @@ export interface CountryType {
   longitude: number;
   name: string;
 }
+
+export interface CountrySelection {
+  value: string;
+  label: string;
+}
