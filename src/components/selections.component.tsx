@@ -32,7 +32,12 @@ const Selections = () => {
             className="w-full"
           />
         </div>
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          className="flex justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto p-2 my-5 border-2 rounded"
+        >
+          Submit
+        </button>
       </form>
     </>
   );
