@@ -5,7 +5,8 @@ import { countries } from "../data/countries";
 import { CountrySelection } from "../interfaces";
 
 const Selections = () => {
-  const { setSelectedCountry } = useContext(AppContext);
+  const { numGuesses, setNumGuesses, setSelectedCountry } =
+    useContext(AppContext);
   const [country, setCountry] = useState<CountrySelection>({
     value: "",
     label: "",
@@ -17,6 +18,7 @@ const Selections = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSelectedCountry(country);
+    setNumGuesses(numGuesses + 1);
   };
 
   return (
