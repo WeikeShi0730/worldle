@@ -1,6 +1,5 @@
 import { default as CountrySvg } from "../data/countries-svg/ca/vector.svg";
 
-// country image api:
 const CurrentCountry = () => {
   return (
     <div>
