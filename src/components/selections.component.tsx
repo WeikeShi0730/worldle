@@ -17,11 +17,13 @@ const Selections = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newCountries = selectedCountries;
-    newCountries[numGuesses] = country;
-    setSelectedCountries(newCountries);
-    console.log(newCountries);
-    setNumGuesses(numGuesses + 1);
+
+    if (country !== undefined && country !== null && country.value.length > 0) {
+      const newCountries = selectedCountries;
+      newCountries[numGuesses] = country;
+      setSelectedCountries(newCountries);
+      setNumGuesses(numGuesses + 1);
+    }
   };
 
   return (
