@@ -18,9 +18,9 @@ const Selections = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const newCountries = selectedCountries;
-    newCountries.push(country);
+    newCountries[numGuesses] = country;
     setSelectedCountries(newCountries);
-    console.log(newCountries)
+    console.log(newCountries);
     setNumGuesses(numGuesses + 1);
   };
 

@@ -17,7 +17,7 @@ function App() {
   const [numGuesses, setNumGuesses] = useState<number>(0);
   const [selectedCountries, setSelectedCountries] = useState<
     CountrySelection[]
-  >([] as CountrySelection[]);
+  >([{}, {}, {}, {}, {}, {}] as CountrySelection[]);
 
   const value = {
     numGuesses,
