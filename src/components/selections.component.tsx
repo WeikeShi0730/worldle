@@ -17,7 +17,6 @@ const Selections = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     if (country !== undefined && country !== null && country.value.length > 0) {
       const newCountries = selectedCountries;
       newCountries[numGuesses] = country;
