@@ -35,6 +35,7 @@ const Selections = () => {
             onChange={(country) => {
               setCountry(country as CountrySelection);
             }}
+            menuPlacement="top"
             className="w-full"
           />
         </div>
