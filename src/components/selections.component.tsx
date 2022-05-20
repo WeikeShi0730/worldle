@@ -40,7 +40,7 @@ const Selections = () => {
         </div>
         <button
           type="submit"
-          className="flex justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto p-2 my-5 border-2 rounded"
+          className="flex justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto p-2 my-5 bg-white rounded"
         >
           Submit
         </button>
