@@ -5,6 +5,7 @@ import GuessPanels from "./components/guess-panels.component";
 import Selections from "./components/selections.component";
 import Result from "./components/result.component";
 import { IN_PROCESS } from "./constants";
+import Footer from "./components/footer.component";
 
 interface contextType {
   numGuesses: number;
@@ -37,6 +38,7 @@ function App() {
         <Selections />
         <Result win={win} />
       </AppContext.Provider>
+      <Footer />
     </div>
   );
 }
