@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IN_PROCESS, FINISHED_WIN } from "../constants";
 import Modal from "./modal.component";
 const Result = ({ win }: any) => {
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
   return (
     <>
       {open ? (
