@@ -4,7 +4,7 @@ import CurrentCountry from "./components/current-country.component";
 import GuessPanels from "./components/guess-panels.component";
 import Selections from "./components/selections.component";
 import Result from "./components/result.component";
-import { IN_PROCESS, FINISHED_LOSE } from "./constants";
+import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
 
 interface contextType {
@@ -21,14 +21,14 @@ function App() {
   const [selectedCountries, setSelectedCountries] = useState<
     CountrySelection[]
   >([{}, {}, {}, {}, {}, {}] as CountrySelection[]);
-  const [win, setWin] = useState<String>(FINISHED_LOSE);
+  const [game, setGame] = useState<string>(IN_PROCESS);
 
   const value = {
     numGuesses,
     setNumGuesses,
     selectedCountries,
     setSelectedCountries,
-    setWin,
+    setGame,
   };
   return (
     <div>
@@ -36,7 +36,7 @@ function App() {
         <CurrentCountry />
         <GuessPanels />
         <Selections />
-        <Result win={win} />
+        <Result game={game} />
       </AppContext.Provider>
       <Footer />
     </div>
