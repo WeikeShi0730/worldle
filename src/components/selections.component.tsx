@@ -3,10 +3,16 @@ import { AppContext } from "../App";
 import Select from "react-select";
 import { countries } from "../data/countries";
 import { CountrySelection } from "../interfaces";
+import { IN_PROCESS } from "../constants";
 
 const Selections = () => {
-  const { numGuesses, setNumGuesses, selectedCountries, setSelectedCountries } =
-    useContext(AppContext);
+  const {
+    numGuesses,
+    setNumGuesses,
+    selectedCountries,
+    setSelectedCountries,
+    game,
+  } = useContext(AppContext);
   const [country, setCountry] = useState<CountrySelection>({
     value: "",
     label: "",
@@ -31,6 +37,7 @@ const Selections = () => {
       <form onSubmit={handleSubmit}>
         <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 border-2 rounded">
           <Select
+            isDisabled={game === IN_PROCESS ? false : true}
             options={options}
             value={country}
             onChange={(country) => {
@@ -41,6 +48,7 @@ const Selections = () => {
           />
         </div>
         <button
+          disabled={game === IN_PROCESS ? false : true}
           type="submit"
           className="flex justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto p-2 my-5 bg-white rounded"
         >

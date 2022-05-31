@@ -39,6 +39,7 @@ function App() {
     game,
     setGame,
   };
+
   return (
     <div>
       <AppContext.Provider value={value}>
