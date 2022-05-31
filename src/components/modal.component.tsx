@@ -3,7 +3,7 @@ const Modal = ({
   setOpen,
 }: {
   message: string;
-  setOpen: (arg0: boolean) => void;
+  setOpen: (open: boolean) => void;
 }) => {
   return (
     <>

@@ -8,15 +8,22 @@ import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
 
 interface contextType {
+  currentCountry: CountrySelection;
   numGuesses: number;
   setNumGuesses: (numGuesses: number) => void;
   selectedCountries: CountrySelection[];
   setSelectedCountries: (couselectedCountriesntry: CountrySelection[]) => void;
+  game: string;
+  setGame: (game: string) => void;
 }
 
 export const AppContext = createContext<contextType>({} as contextType);
 
 function App() {
+  const [currentCountry, setCurrentCountry] = useState<CountrySelection>({
+    value: "CA",
+    label: "Canada",
+  } as CountrySelection);
   const [numGuesses, setNumGuesses] = useState<number>(0);
   const [selectedCountries, setSelectedCountries] = useState<
     CountrySelection[]
@@ -24,10 +31,12 @@ function App() {
   const [game, setGame] = useState<string>(IN_PROCESS);
 
   const value = {
+    currentCountry,
     numGuesses,
     setNumGuesses,
     selectedCountries,
     setSelectedCountries,
+    game,
     setGame,
   };
   return (
@@ -36,7 +45,7 @@ function App() {
         <CurrentCountry />
         <GuessPanels />
         <Selections />
-        <Result game={game} />
+        <Result />
       </AppContext.Provider>
       <Footer />
     </div>
