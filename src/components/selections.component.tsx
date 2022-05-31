@@ -21,6 +21,7 @@ const Selections = () => {
       const newCountries = selectedCountries;
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
+      setCountry({} as CountrySelection);
       setNumGuesses(numGuesses + 1);
     }
   };
