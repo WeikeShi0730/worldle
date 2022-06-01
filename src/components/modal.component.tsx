@@ -12,21 +12,28 @@ const Modal = ({
   const { setGame, setNumGuesses, setSelectedCountries } =
     useContext(AppContext);
 
-  const handleClick = () => {
+  const handleClickNewGame = () => {
     setOpen(false);
     setNumGuesses(0);
     setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountrySelection[]);
     setGame(IN_PROCESS);
   };
 
+  const handleClickClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <div className="fixed z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
-        <div className="flex items-center justify-center z-10 bg-slate-200 p-20 rounded backdrop-blur-md bg-opacity-20">
-          <button className="absolute top-3 right-3" onClick={handleClick}>
+        <div className="h-full flex flex-col items-center justify-center z-10 bg-slate-200 rounded backdrop-blur-md bg-opacity-20">
+          <button className="absolute top-3 right-3" onClick={handleClickClose}>
+            X
+          </button>
+          <div className="p-5">{message}</div>
+          <button className="self-end mt-auto p-5" onClick={handleClickNewGame}>
             New Game
           </button>
-          <div className="">{message}</div>
         </div>
       </div>
     </>
