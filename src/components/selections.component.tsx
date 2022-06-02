@@ -64,7 +64,7 @@ const Selections = () => {
           type="submit"
           className="flex justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto p-2 my-5 bg-white rounded"
         >
-          {game === IN_PROCESS ? "Submit" : "New Game"}
+          Submit
         </button>
       </form>
     </>
