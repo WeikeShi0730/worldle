@@ -32,10 +32,21 @@ const Selections = () => {
     }
   };
 
+  const theme = (theme: any) => ({
+    ...theme,
+    colors: {
+      ...theme.colors,
+      text: "black",
+      primary50: "rgba(100, 116, 139, 0.1)",
+      primary25: "rgba(100, 116, 139, 0.2)",
+      primary: "rgba(100, 116, 139, 0.3)",
+    },
+  });
+
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 border-2 rounded">
+        <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 rounded">
           <Select
             isDisabled={game === IN_PROCESS ? false : true}
             options={options}
@@ -45,6 +56,7 @@ const Selections = () => {
             }}
             menuPlacement="top"
             className="w-full"
+            theme={theme}
           />
         </div>
         <button
