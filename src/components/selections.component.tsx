@@ -22,8 +22,7 @@ const Selections = () => {
     return { value: country.code, label: country.name };
   });
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     if (country !== undefined && country !== null && country.value.length > 0) {
       const newCountries = selectedCountries;
       newCountries[numGuesses] = country;
@@ -33,8 +32,7 @@ const Selections = () => {
     }
   };
 
-  const handleNewGame = (event: any) => {
-    event.preventDefault();
+  const handleNewGame = () => {
     setNumGuesses(0);
     setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountrySelection[]);
     setGame(IN_PROCESS);
@@ -53,36 +51,34 @@ const Selections = () => {
 
   return (
     <>
-      <form>
-        <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 rounded">
-          <Select
-            isDisabled={game === IN_PROCESS ? false : true}
-            options={options}
-            value={country}
-            onChange={(country) => {
-              setCountry(country as CountrySelection);
-            }}
-            menuPlacement="top"
-            className="w-full"
-            theme={theme}
-          />
-        </div>
-        {game === IN_PROCESS ? (
-          <button
-            onClick={handleSubmit}
-            className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded"
-          >
-            Submit
-          </button>
-        ) : (
-          <button
-            onClick={handleNewGame}
-            className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded"
-          >
-            New Game
-          </button>
-        )}
-      </form>
+      <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 rounded">
+        <Select
+          isDisabled={game === IN_PROCESS ? false : true}
+          options={options}
+          value={country}
+          onChange={(country) => {
+            setCountry(country as CountrySelection);
+          }}
+          menuPlacement="top"
+          className="w-full"
+          theme={theme}
+        />
+      </div>
+      {game === IN_PROCESS ? (
+        <button
+          onClick={handleSubmit}
+          className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded"
+        >
+          Submit
+        </button>
+      ) : (
+        <button
+          onClick={handleNewGame}
+          className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded"
+        >
+          New Game
+        </button>
+      )}
     </>
   );
 };
