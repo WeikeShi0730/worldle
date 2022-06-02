@@ -12,6 +12,7 @@ const Selections = () => {
     selectedCountries,
     setSelectedCountries,
     game,
+    setGame,
   } = useContext(AppContext);
   const [country, setCountry] = useState<CountrySelection>({
     value: "",
@@ -21,7 +22,7 @@ const Selections = () => {
     return { value: country.code, label: country.name };
   });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     if (country !== undefined && country !== null && country.value.length > 0) {
       const newCountries = selectedCountries;
@@ -30,6 +31,13 @@ const Selections = () => {
       setCountry({} as CountrySelection);
       setNumGuesses(numGuesses + 1);
     }
+  };
+
+  const handleNewGame = (event: any) => {
+    event.preventDefault();
+    setNumGuesses(0);
+    setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountrySelection[]);
+    setGame(IN_PROCESS);
   };
 
   const theme = (theme: any) => ({
@@ -45,7 +53,7 @@ const Selections = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 rounded">
           <Select
             isDisabled={game === IN_PROCESS ? false : true}
@@ -59,13 +67,21 @@ const Selections = () => {
             theme={theme}
           />
         </div>
-        <button
-          disabled={game === IN_PROCESS ? false : true}
-          type="submit"
-          className="flex justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto p-2 my-5 bg-white rounded"
-        >
-          Submit
-        </button>
+        {game === IN_PROCESS ? (
+          <button
+            onClick={handleSubmit}
+            className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded"
+          >
+            Submit
+          </button>
+        ) : (
+          <button
+            onClick={handleNewGame}
+            className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded"
+          >
+            New Game
+          </button>
+        )}
       </form>
     </>
   );
