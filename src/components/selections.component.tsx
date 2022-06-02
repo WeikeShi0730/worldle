@@ -24,7 +24,12 @@ const Selections = () => {
 
   const handleSubmit = () => {
     if (country.value !== undefined && country.value !== null) {
-      console.log(country);
+      if (
+        options.findIndex((option) => option.value === country.value) === -1
+      ) {
+        alert("No country found");
+        return;
+      }
       const newCountries = selectedCountries;
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
