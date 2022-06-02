@@ -23,7 +23,8 @@ const Selections = () => {
   });
 
   const handleSubmit = () => {
-    if (country !== undefined && country !== null && country.value.length > 0) {
+    if (country.value !== undefined && country.value !== null) {
+      console.log(country);
       const newCountries = selectedCountries;
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
