@@ -8,7 +8,7 @@ const GuessPanels = () => {
       {selectedCountries.map((selectedCountry, index) => {
         return (
           <div
-            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex justify-center items-center"
+            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto"
             key={index}
           >
             <GuessPanel selectedCountry={selectedCountry} />
