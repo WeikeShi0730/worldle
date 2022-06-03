@@ -1,6 +1,6 @@
 const GuessPanel = ({ selectedCountry }: any) => {
   return (
-    <div className="flex justify-evenly items-center h-10 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto p-1 bg-white border-2 rounded">
+    <div className="h-10 m-1 p-1 bg-white border-2 rounded">
       <div className="country flex justify-center w-8/12">
         {selectedCountry.label}
       </div>

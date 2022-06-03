@@ -4,11 +4,14 @@ import { AppContext } from "../App";
 const GuessPanels = () => {
   const { selectedCountries } = useContext(AppContext);
   return (
-    <div className="w-full">
+    <div>
       {selectedCountries.map((selectedCountry, index) => {
         return (
-          <div className="" key={index}>
-            <GuessPanel selectedCountry={selectedCountry}></GuessPanel>
+          <div
+            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex justify-center items-center"
+            key={index}
+          >
+            <GuessPanel selectedCountry={selectedCountry} />
           </div>
         );
       })}
