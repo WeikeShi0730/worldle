@@ -23,7 +23,6 @@ const Selections = () => {
   });
 
   const handleSubmit = () => {
-    console.log(country);
     if (
       country.value !== undefined &&
       country.value !== null &&
