@@ -56,6 +56,25 @@ const Selections = () => {
     },
   });
 
+  const customStyles = {
+    control: (base: any) => ({
+      ...base,
+      background: "transparent",
+      border: "2px solid white",
+      "&:focus": {
+        border: "2px solid white",
+      },
+      "&:hover": {
+        border: "2px solid white",
+      },
+    }),
+
+    singleValue: (provided: any) => ({
+      ...provided,
+      color: "white",
+    }),
+  };
+
   return (
     <>
       <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 rounded">
@@ -69,6 +88,7 @@ const Selections = () => {
           menuPlacement="top"
           className="w-full"
           theme={theme}
+          styles={customStyles}
         />
       </div>
       {game === IN_PROCESS ? (
