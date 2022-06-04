@@ -61,10 +61,7 @@ const Selections = () => {
       ...base,
       background: "transparent",
       border: "2px solid white",
-      "&:focus": {
-        border: "2px solid white",
-      },
-      "&:hover": {
+      "&:focus, :hover": {
         border: "2px solid white",
       },
     }),
