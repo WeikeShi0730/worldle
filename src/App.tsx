@@ -1,5 +1,6 @@
 import { useState, createContext } from "react";
 import { CountrySelection } from "./interfaces";
+import Header from "./components/header.component";
 import CurrentCountry from "./components/current-country.component";
 import GuessPanels from "./components/guess-panels.component";
 import Selections from "./components/selections.component";
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <AppContext.Provider value={value}>
         <CurrentCountry />
         <GuessPanels />
