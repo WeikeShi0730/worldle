@@ -4,12 +4,8 @@ const GuessPanel = ({ selectedCountry }: any) => {
       <div className="country flex justify-center items-center w-8/12 border-2 rounded">
         {selectedCountry.label}
       </div>
-      <div className="distance flex justify-center items-center w-2/12 border-2 mx-1 rounded">
-        12KM
-      </div>
-      <div className="direction flex justify-center items-center w-2/12 border-2 rounded">
-        UP
-      </div>
+      <div className="distance flex justify-center items-center w-2/12 border-2 mx-1 rounded"></div>
+      <div className="direction flex justify-center items-center w-2/12 border-2 rounded"></div>
     </div>
   );
 };
