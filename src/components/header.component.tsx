@@ -1,7 +1,9 @@
-import React from "react";
-
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <div className="flex justify-center items-center text-2xl pt-10 pb-5 mx-20 border-b-2 border-black">
+      WORLDLE
+    </div>
+  );
 };
 
 export default Header;
