@@ -1,11 +1,11 @@
 export interface CountryType {
-  code: string;
+  value: string;
   latitude: number;
   longitude: number;
-  name: string;
-}
-
-export interface CountrySelection {
-  value: string;
   label: string;
 }
+
+// export interface CountryType {
+//   value: string;
+//   label: string;
+// }

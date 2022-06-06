@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import GuessPanel from "./guess-panel.component";
 import { AppContext } from "../App";
+
 const GuessPanels = () => {
   const { selectedCountries } = useContext(AppContext);
   return (

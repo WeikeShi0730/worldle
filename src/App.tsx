@@ -1,5 +1,5 @@
 import { useState, createContext } from "react";
-import { CountrySelection } from "./interfaces";
+import { CountryType } from "./interfaces";
 import Header from "./components/header.component";
 import CurrentCountry from "./components/current-country.component";
 import GuessPanels from "./components/guess-panels.component";
@@ -9,11 +9,11 @@ import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
 
 interface contextType {
-  currentCountry: CountrySelection;
+  currentCountry: CountryType;
   numGuesses: number;
   setNumGuesses: (numGuesses: number) => void;
-  selectedCountries: CountrySelection[];
-  setSelectedCountries: (couselectedCountriesntry: CountrySelection[]) => void;
+  selectedCountries: CountryType[];
+  setSelectedCountries: (couselectedCountriesntry: CountryType[]) => void;
   game: string;
   setGame: (game: string) => void;
 }
@@ -21,14 +21,19 @@ interface contextType {
 export const AppContext = createContext<contextType>({} as contextType);
 
 function App() {
-  const [currentCountry, setCurrentCountry] = useState<CountrySelection>({
+  const [currentCountry, setCurrentCountry] = useState<CountryType>({
     value: "CA",
     label: "Canada",
-  } as CountrySelection);
+  } as CountryType);
   const [numGuesses, setNumGuesses] = useState<number>(0);
-  const [selectedCountries, setSelectedCountries] = useState<
-    CountrySelection[]
-  >([{}, {}, {}, {}, {}, {}] as CountrySelection[]);
+  const [selectedCountries, setSelectedCountries] = useState<CountryType[]>([
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ] as CountryType[]);
   const [game, setGame] = useState<string>(IN_PROCESS);
 
   const value = {

@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Select from "react-select";
 import { countries } from "../data/countries";
-import { CountrySelection } from "../interfaces";
+import { CountryType } from "../interfaces";
 import { IN_PROCESS } from "../constants";
 
 const Selections = () => {
@@ -14,13 +14,15 @@ const Selections = () => {
     game,
     setGame,
   } = useContext(AppContext);
-  const [country, setCountry] = useState<CountrySelection>({
+  const [country, setCountry] = useState<CountryType>({
     value: "",
     label: "",
+    latitude: 0,
+    longitude: 0,
   });
-  const options = countries.map((country) => {
-    return { value: country.code, label: country.name };
-  });
+  // const options = countries.map((country) => {
+  //   return { value: country.code, label: country.name };
+  // });
 
   const handleSubmit = () => {
     if (
@@ -31,7 +33,7 @@ const Selections = () => {
       const newCountries = selectedCountries;
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
-      setCountry({} as CountrySelection);
+      setCountry({} as CountryType);
       setNumGuesses(numGuesses + 1);
     } else {
       alert("No country found");
@@ -41,7 +43,7 @@ const Selections = () => {
 
   const handleNewGame = () => {
     setNumGuesses(0);
-    setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountrySelection[]);
+    setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountryType[]);
     setGame(IN_PROCESS);
   };
 
@@ -77,10 +79,10 @@ const Selections = () => {
       <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 rounded">
         <Select
           isDisabled={game === IN_PROCESS ? false : true}
-          options={options}
+          options={countries}
           value={country}
           onChange={(country) => {
-            setCountry(country as CountrySelection);
+            setCountry(country as CountryType);
           }}
           menuPlacement="top"
           className="w-full"
