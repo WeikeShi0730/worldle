@@ -22,7 +22,7 @@ const useGame = () => {
         longitude: selectedCountries[numGuesses - 1]?.longitude,
       };
       const distance = convertDistance(
-        getDistance(currentCountryPos, selectedCountryPos),
+        getDistance(currentCountryPos, selectedCountryPos, 1000),
         "km"
       );
       const direction = getCompassDirection(
