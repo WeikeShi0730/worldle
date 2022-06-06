@@ -1,11 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import { IN_PROCESS, FINISHED_WIN, FINISHED_LOSE } from "../constants";
 import { AppContext } from "../App";
+import useGame from "../utils/useGame";
 import Modal from "./modal.component";
 const Result = () => {
   const [open, setOpen] = useState<boolean>(false);
   const { currentCountry, numGuesses, selectedCountries, setGame, game } =
     useContext(AppContext);
+  const difference = useGame();
 
   useEffect(() => {
     if (

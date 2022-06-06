@@ -9,3 +9,8 @@ export interface CountryType {
 //   value: string;
 //   label: string;
 // }
+
+export interface differenceType {
+  distance: number;
+  direction: string;
+}

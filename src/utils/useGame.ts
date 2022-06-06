@@ -1,8 +1,13 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
-import { getDistance, convertDistance } from "geolib";
+import { differenceType } from "../interfaces/index";
+import { getDistance, convertDistance, getCompassDirection } from "geolib";
 
-const Game = () => {
+const useGame = () => {
+  const [difference, setDifference] = useState<differenceType>({
+    distance: 0,
+    direction: "",
+  });
   const { currentCountry, selectedCountries, numGuesses } =
     useContext(AppContext);
 
@@ -20,11 +25,18 @@ const Game = () => {
         getDistance(currentCountryPos, selectedCountryPos),
         "km"
       );
-      console.log(distance);
+      const direction = getCompassDirection(
+        currentCountryPos,
+        selectedCountryPos
+      );
+      setDifference({
+        distance,
+        direction,
+      });
     }
   }, [currentCountry, numGuesses, selectedCountries]);
 
-  return <div>Game</div>;
+  return difference;
 };
 
-export default Game;
+export default useGame;
