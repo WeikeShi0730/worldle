@@ -4,6 +4,7 @@ import Header from "./components/header.component";
 import CurrentCountry from "./components/current-country.component";
 import GuessPanels from "./components/guess-panels.component";
 import Selections from "./components/selections.component";
+import Game from "./components/game.component";
 import Result from "./components/result.component";
 import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
@@ -24,6 +25,8 @@ function App() {
   const [currentCountry, setCurrentCountry] = useState<CountryType>({
     value: "CA",
     label: "Canada",
+    latitude: 56.130366,
+    longitude: -106.346771,
   } as CountryType);
   const [numGuesses, setNumGuesses] = useState<number>(0);
   const [selectedCountries, setSelectedCountries] = useState<CountryType[]>([
@@ -54,6 +57,7 @@ function App() {
         <GuessPanels />
         <Selections />
         <Result />
+        <Game />
       </AppContext.Provider>
       <Footer />
     </div>
