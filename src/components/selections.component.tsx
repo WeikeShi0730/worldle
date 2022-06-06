@@ -20,9 +20,6 @@ const Selections = () => {
     latitude: 0,
     longitude: 0,
   });
-  // const options = countries.map((country) => {
-  //   return { value: country.code, label: country.name };
-  // });
 
   const handleSubmit = () => {
     if (
@@ -30,7 +27,7 @@ const Selections = () => {
       country.value !== null &&
       country.value !== ""
     ) {
-      const newCountries = selectedCountries;
+      let newCountries = selectedCountries; // MOVE to useGame !!!!!!!!!
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
       setCountry({} as CountryType);

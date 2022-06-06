@@ -4,10 +4,14 @@ import { differenceType } from "../interfaces/index";
 import { getDistance, convertDistance, getCompassDirection } from "geolib";
 
 const useGame = () => {
-  const [difference, setDifference] = useState<differenceType>({
-    distance: 0,
-    direction: "",
-  });
+  const [difference, setDifference] = useState<differenceType[]>([
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ] as differenceType[]);
   const { currentCountry, selectedCountries, numGuesses } =
     useContext(AppContext);
 
@@ -29,11 +33,12 @@ const useGame = () => {
         currentCountryPos,
         selectedCountryPos
       );
-      setDifference({
-        distance,
-        direction,
-      });
+      let newDifferenceArray = difference;
+      newDifferenceArray[numGuesses - 1] = { distance, direction };
+      setDifference(newDifferenceArray);
+      console.log(newDifferenceArray);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCountry, numGuesses, selectedCountries]);
 
   return difference;

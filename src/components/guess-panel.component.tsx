@@ -1,7 +1,12 @@
-import useGame from "../utils/useGame";
+import { CountryType, differenceType } from "../interfaces";
 
-const GuessPanel = ({ selectedCountry }: any) => {
-  const difference = useGame();
+type GuessPanelType = {
+  selectedCountry: CountryType;
+  difference: differenceType;
+};
+
+const GuessPanel = ({ selectedCountry, difference }: GuessPanelType) => {
+  // console.log(difference);
   return (
     <div className="flex w-full h-10 my-1 rounded text-white">
       <div className="country flex justify-center items-center w-7/12 border-2 rounded">
