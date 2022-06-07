@@ -36,12 +36,11 @@ const useGame = () => {
       let newDifferenceArray = difference;
       newDifferenceArray[numGuesses - 1] = { distance, direction };
       setDifference(newDifferenceArray);
-      console.log(newDifferenceArray);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCountry, numGuesses, selectedCountries]);
 
-  return difference;
+  return [difference];
 };
 
 export default useGame;
