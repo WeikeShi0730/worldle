@@ -7,7 +7,6 @@ import { differenceType } from "../interfaces";
 const GuessPanels = () => {
   const [difference] = useGame();
   const { selectedCountries } = useContext(AppContext);
-  // console.log(difference)
 
   return (
     <div>

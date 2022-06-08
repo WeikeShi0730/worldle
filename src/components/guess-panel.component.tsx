@@ -6,7 +6,7 @@ type GuessPanelType = {
 };
 
 const GuessPanel = ({ selectedCountry, difference }: GuessPanelType) => {
-  console.log(difference);
+  // console.log(difference);
   return (
     <div className="flex w-full h-10 my-1 rounded text-white">
       <div className="country flex justify-center items-center w-7/12 border-2 rounded">
