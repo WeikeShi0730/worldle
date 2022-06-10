@@ -29,14 +29,9 @@ function App() {
     longitude: -106.346771,
   } as CountryType);
   const [numGuesses, setNumGuesses] = useState<number>(0);
-  const [selectedCountries, setSelectedCountries] = useState<CountryType[]>([
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-  ] as CountryType[]);
+  const [selectedCountries, setSelectedCountries] = useState<CountryType[]>(
+    [] as CountryType[]
+  );
   const [game, setGame] = useState<string>(IN_PROCESS);
   // const [difference] = useGame();
   // console.log(difference);
