@@ -4,7 +4,6 @@ import Header from "./components/header.component";
 import CurrentCountry from "./components/current-country.component";
 import GuessPanels from "./components/guess-panels.component";
 import Selections from "./components/selections.component";
-// import useGame from "./utils/useGame";
 import Result from "./components/result.component";
 import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
@@ -48,8 +47,6 @@ function App() {
     {},
     {},
   ] as differenceType[]);
-  // const [difference] = useGame();
-  // console.log(difference);
 
   const value = {
     currentCountry,
