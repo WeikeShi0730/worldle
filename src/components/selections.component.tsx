@@ -16,6 +16,8 @@ const Selections = () => {
     setSelectedCountries,
     game,
     setGame,
+    difference,
+    setDifference,
   } = useContext(AppContext);
   const [country, setCountry] = useState<CountryType>({
     value: "",
@@ -23,14 +25,6 @@ const Selections = () => {
     latitude: 0,
     longitude: 0,
   });
-  const [difference, setDifference] = useState<differenceType[]>([
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-  ] as differenceType[]);
 
   const handleSubmit = () => {
     if (
