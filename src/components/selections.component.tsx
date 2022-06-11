@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Select from "react-select";
 import { countries } from "../data/countries";
-import { CountryType } from "../interfaces";
+import { CountryType, differenceType } from "../interfaces";
 import { IN_PROCESS } from "../constants";
 import { getDistance, convertDistance, getCompassDirection } from "geolib";
 
@@ -66,6 +66,7 @@ const Selections = () => {
   const handleNewGame = () => {
     setNumGuesses(0);
     setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountryType[]);
+    setDifference([{}, {}, {}, {}, {}, {}] as differenceType[]);
     setGame(IN_PROCESS);
   };
 

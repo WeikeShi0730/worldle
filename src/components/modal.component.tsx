@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
 import { IN_PROCESS } from "../constants";
-import { CountryType } from "../interfaces";
+import { CountryType, differenceType } from "../interfaces";
 const Modal = ({
   message,
   setOpen,
@@ -9,13 +9,14 @@ const Modal = ({
   message: string;
   setOpen: (open: boolean) => void;
 }) => {
-  const { setGame, setNumGuesses, setSelectedCountries } =
+  const { setGame, setNumGuesses, setSelectedCountries, setDifference } =
     useContext(AppContext);
 
   const handleClickNewGame = () => {
     setOpen(false);
     setNumGuesses(0);
     setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountryType[]);
+    setDifference([{}, {}, {}, {}, {}, {}] as differenceType[]);
     setGame(IN_PROCESS);
   };
 
