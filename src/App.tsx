@@ -1,5 +1,5 @@
 import { useState, createContext } from "react";
-import { CountryType } from "./interfaces";
+import { CountryType, differenceType } from "./interfaces";
 import Header from "./components/header.component";
 import CurrentCountry from "./components/current-country.component";
 import GuessPanels from "./components/guess-panels.component";
@@ -14,9 +14,11 @@ interface contextType {
   numGuesses: number;
   setNumGuesses: (numGuesses: number) => void;
   selectedCountries: CountryType[];
-  setSelectedCountries: (couselectedCountriesntry: CountryType[]) => void;
+  setSelectedCountries: (selectedCountries: CountryType[]) => void;
   game: string;
   setGame: (game: string) => void;
+  difference: differenceType[];
+  setDifference: (difference: CountryType[]) => void;
 }
 
 export const AppContext = createContext<contextType>({} as contextType);
@@ -38,6 +40,14 @@ function App() {
     {},
   ] as CountryType[]);
   const [game, setGame] = useState<string>(IN_PROCESS);
+  const [difference, setDifference] = useState<differenceType[]>([
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ] as differenceType[]);
   // const [difference] = useGame();
   // console.log(difference);
 
@@ -49,6 +59,8 @@ function App() {
     setSelectedCountries,
     game,
     setGame,
+    difference,
+    setDifference,
   };
 
   return (

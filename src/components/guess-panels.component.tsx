@@ -1,11 +1,13 @@
 import { useContext} from "react";
 import GuessPanel from "./guess-panel.component";
 import { AppContext } from "../App";
-import useGame from "../utils/useGame";
+// import useGame from "../utils/useGame";
 import { differenceType } from "../interfaces";
 
 const GuessPanels = () => {
-  const [difference] = useGame();
+  // const [difference] = useGame();
+
+  const { difference } = useContext(AppContext);
   const { selectedCountries } = useContext(AppContext);
 
   return (

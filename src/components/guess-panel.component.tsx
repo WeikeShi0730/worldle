@@ -6,6 +6,7 @@ type GuessPanelType = {
 };
 
 const GuessPanel = ({ selectedCountry, difference }: GuessPanelType) => {
+  // const { difference } = useContext(AppContext);
   // console.log(difference);
   return (
     <div className="flex w-full h-10 my-1 rounded text-white">
@@ -13,10 +14,10 @@ const GuessPanel = ({ selectedCountry, difference }: GuessPanelType) => {
         {selectedCountry.label}
       </div>
       <div className="distance flex justify-center items-center w-3/12 border-2 mx-1 rounded">
-        {/* {difference.distance} KM */}
+        {difference.distance} KM
       </div>
       <div className="direction flex justify-center items-center w-2/12 border-2 rounded">
-        {/* {difference.direction} */}
+        {difference.direction}
       </div>
     </div>
   );

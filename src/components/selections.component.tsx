@@ -1,12 +1,15 @@
 import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Select from "react-select";
+import { differenceType } from "../interfaces/index";
 import { countries } from "../data/countries";
 import { CountryType } from "../interfaces";
 import { IN_PROCESS } from "../constants";
+import { getDistance, convertDistance, getCompassDirection } from "geolib";
 
 const Selections = () => {
   const {
+    currentCountry,
     numGuesses,
     setNumGuesses,
     selectedCountries,
@@ -20,6 +23,14 @@ const Selections = () => {
     latitude: 0,
     longitude: 0,
   });
+  const [difference, setDifference] = useState<differenceType[]>([
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ] as differenceType[]);
 
   const handleSubmit = () => {
     if (
@@ -30,6 +41,27 @@ const Selections = () => {
       let newCountries = selectedCountries; // MOVE to useGame !!!!!!!!!
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
+
+      const currentCountryPos = {
+        latitude: currentCountry.latitude,
+        longitude: currentCountry.longitude,
+      };
+      const selectedCountryPos = {
+        latitude: selectedCountries[numGuesses]?.latitude,
+        longitude: selectedCountries[numGuesses]?.longitude,
+      };
+      const distance = convertDistance(
+        getDistance(currentCountryPos, selectedCountryPos, 1000),
+        "km"
+      );
+      const direction = getCompassDirection(
+        currentCountryPos,
+        selectedCountryPos
+      );
+      let newDifferenceArray = difference;
+      newDifferenceArray[numGuesses] = { distance, direction };
+      setDifference(newDifferenceArray);
+
       setCountry({} as CountryType);
       setNumGuesses(numGuesses + 1);
     } else {
