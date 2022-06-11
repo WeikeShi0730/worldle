@@ -18,7 +18,7 @@ interface contextType {
   game: string;
   setGame: (game: string) => void;
   difference: differenceType[];
-  setDifference: (difference: CountryType[]) => void;
+  setDifference: (difference: differenceType[]) => void;
 }
 
 export const AppContext = createContext<contextType>({} as contextType);
