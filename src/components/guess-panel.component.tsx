@@ -12,7 +12,7 @@ const GuessPanel = ({ selectedCountry, difference }: GuessPanelType) => {
         {selectedCountry.label}
       </div>
       <div className="distance flex justify-center items-center w-3/12 border-2 mx-1 rounded">
-        {difference.distance} KM
+        {difference.distance ? difference.distance + "KM" : ""}
       </div>
       <div className="direction flex justify-center items-center w-2/12 border-2 rounded">
         {difference.direction}
