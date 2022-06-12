@@ -99,7 +99,7 @@ const Selections = () => {
 
   return (
     <>
-      <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 rounded">
+      <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
         <Select
           isDisabled={game === IN_PROCESS ? false : true}
           options={countries}
