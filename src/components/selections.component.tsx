@@ -116,14 +116,14 @@ const Selections = () => {
       {game === IN_PROCESS ? (
         <button
           onClick={handleSubmit}
-          className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded"
+          className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded shadow-sm hover:shadow-md hover:shadow-gray-500 transform duration-200 ease-in-out"
         >
           Submit
         </button>
       ) : (
         <button
           onClick={handleNewGame}
-          className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded"
+          className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white rounded shadow-sm hover:shadow-md hover:shadow-gray-500 transform duration-200 ease-in-out"
         >
           New Game
         </button>
