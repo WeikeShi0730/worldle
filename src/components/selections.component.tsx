@@ -74,7 +74,7 @@ const Selections = () => {
     ...theme,
     colors: {
       ...theme.colors,
-      text: "black",
+      text: "#FFFFFF",
       primary50: "rgba(100, 116, 139, 0.1)",
       primary25: "rgba(100, 116, 139, 0.2)",
       primary: "rgba(100, 116, 139, 0.3)",
@@ -89,11 +89,19 @@ const Selections = () => {
       "&:focus, :hover": {
         border: "2px solid white",
       },
+      color: "#FFFFFF",
     }),
 
-    singleValue: (provided: any) => ({
-      ...provided,
-      color: "white",
+    singleValue: (base: any) => ({
+      ...base,
+      color: "#FFFFFF",
+    }),
+
+    input: (base: any) => ({ // ！！！！！！！！
+      ...base,
+      '[type="input"]': {
+        color: "green",
+      },
     }),
   };
 
