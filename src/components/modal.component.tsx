@@ -1,15 +1,9 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
-import { IN_PROCESS } from "../constants";
+import { FINISHED_WIN, IN_PROCESS } from "../constants";
 import { CountryType, differenceType } from "../interfaces";
-const Modal = ({
-  message,
-  setOpen,
-}: {
-  message: string;
-  setOpen: (open: boolean) => void;
-}) => {
-  const { setGame, setNumGuesses, setSelectedCountries, setDifference } =
+const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
+  const { game, setGame, setNumGuesses, setSelectedCountries, setDifference } =
     useContext(AppContext);
 
   const handleClickNewGame = () => {
@@ -31,7 +25,11 @@ const Modal = ({
           <button className="self-end p-5" onClick={handleClickClose}>
             X
           </button>
-          <div className="p-5">{message}</div>
+          {game === FINISHED_WIN ? (
+            <div className="p-5">win</div>
+          ) : (
+            <div className="p-5">lose</div>
+          )}
           <button
             className="self-center mt-auto p-5"
             onClick={handleClickNewGame}

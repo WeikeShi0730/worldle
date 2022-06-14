@@ -24,16 +24,7 @@ const Result = () => {
 
   return (
     <>
-      {open ? (
-        game === IN_PROCESS ? null : game === FINISHED_WIN ? (
-          <Modal
-            message={`You won, the country is ${currentCountry.label}`}
-            setOpen={setOpen}
-          />
-        ) : (
-          <Modal message={"You lost"} setOpen={setOpen} />
-        )
-      ) : null}
+      {open ? game === IN_PROCESS ? null : <Modal setOpen={setOpen} /> : null}
     </>
   );
 };
