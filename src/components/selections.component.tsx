@@ -97,8 +97,7 @@ const Selections = () => {
       color: "#FFFFFF",
     }),
 
-    input: (base: any) => ({ // ！！！！！！！！
-      ...base,
+    input: (base: any) => ({ // !!!!!!!!
       '[type="input"]': {
         color: "green",
       },
