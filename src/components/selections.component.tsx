@@ -77,6 +77,7 @@ const Selections = () => {
       text: "#FFFFFF",
       primary50: "rgba(100, 116, 139, 0.1)",
       primary25: "rgba(100, 116, 139, 0.2)",
+      primary: "rgba(100, 116, 139, 0.3)",
     },
   });
 
