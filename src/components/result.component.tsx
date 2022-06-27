@@ -15,6 +15,7 @@ const Result = () => {
       setGame(FINISHED_LOSE);
       setOpen(true);
     } else if (
+      selectedCountries[numGuesses - 1]?.value !== undefined &&
       selectedCountries[numGuesses - 1]?.value === currentCountry.value
     ) {
       setGame(FINISHED_WIN);

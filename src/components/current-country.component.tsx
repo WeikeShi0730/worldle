@@ -10,20 +10,18 @@ const CurrentCountry = () => {
 
   useEffect(() => {
     const dynamicImport = async () => {
-      if (true) {
-        const result = await import(
-          `../data/countries-svg/${currentCountry.value.toLocaleLowerCase()}/vector.svg`
-        );
-        setCountrySvg(result.default);
-        setCurrentCountry(currentCountry);
-        console.log(currentCountry);
-      }
+      const result = await import(
+        `../data/countries-svg/${currentCountry.value.toLocaleLowerCase()}/vector.svg`
+      );
+      setCountrySvg(result.default);
+      setCurrentCountry(currentCountry);
+      console.log(currentCountry);
     };
 
     dynamicImport();
 
     return () => {};
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
