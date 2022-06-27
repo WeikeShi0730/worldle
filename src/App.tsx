@@ -10,6 +10,7 @@ import Footer from "./components/footer.component";
 
 interface contextType {
   currentCountry: CountryType;
+  setCurrentCountry: (currentCountry: CountryType) => void;
   numGuesses: number;
   setNumGuesses: (numGuesses: number) => void;
   selectedCountries: CountryType[];
@@ -23,12 +24,9 @@ interface contextType {
 export const AppContext = createContext<contextType>({} as contextType);
 
 function App() {
-  const [currentCountry, setCurrentCountry] = useState<CountryType>({
-    value: "CA",
-    label: "Canada",
-    latitude: 56.130366,
-    longitude: -106.346771,
-  } as CountryType);
+  const [currentCountry, setCurrentCountry] = useState<CountryType>(
+    {} as CountryType
+  );
   const [numGuesses, setNumGuesses] = useState<number>(0);
   const [selectedCountries, setSelectedCountries] = useState<CountryType[]>([
     {},
@@ -50,6 +48,7 @@ function App() {
 
   const value = {
     currentCountry,
+    setCurrentCountry,
     numGuesses,
     setNumGuesses,
     selectedCountries,
