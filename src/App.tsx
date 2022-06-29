@@ -24,7 +24,9 @@ interface contextType {
 export const AppContext = createContext<contextType>({} as contextType);
 
 function App() {
-  const [currentCountry, setCurrentCountry] = useState<CountryType>({} as CountryType);
+  const [currentCountry, setCurrentCountry] = useState<CountryType>(
+    {} as CountryType
+  );
   const [numGuesses, setNumGuesses] = useState<number>(0);
   const [selectedCountries, setSelectedCountries] = useState<CountryType[]>([
     {},
@@ -58,7 +60,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="h-screen flex flex-col justify-between">
       <Header />
       <AppContext.Provider value={value}>
         <CurrentCountry />
