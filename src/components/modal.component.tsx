@@ -35,7 +35,7 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
             <div className="p-5">lose</div>
           )}
           <button
-            className="m-5 p-5 bg-slate-700 bg-opacity-70 shadow rounded-lg hover:bg-opacity-50 hover:shadow-md duration-200"
+            className="m-5 p-2 w-40 bg-slate-700 bg-opacity-70 shadow rounded hover:bg-opacity-50 hover:shadow-md duration-200"
             onClick={handleClickNewGame}
           >
             New Game
