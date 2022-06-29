@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import { FINISHED_WIN, IN_PROCESS } from "../constants";
 import { CountryType, differenceType } from "../interfaces";
+
 const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   const { game, setGame, setNumGuesses, setSelectedCountries, setDifference } =
     useContext(AppContext);
