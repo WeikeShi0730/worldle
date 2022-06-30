@@ -99,8 +99,8 @@ const Selections = () => {
   };
 
   return (
-    <>
-      <div className="w-full flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 px-5 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+    <div className="">
+      <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 px-5">
         <Select
           isDisabled={game === IN_PROCESS ? false : true}
           options={countries}
@@ -109,7 +109,7 @@ const Selections = () => {
             setCountry(country as CountryType);
           }}
           menuPlacement="top"
-          className="w-full"
+          className="w-full rounded shadow-md hover:shadow-gray-400 duration-200 "
           theme={theme}
           styles={customStyles}
         />
@@ -129,7 +129,7 @@ const Selections = () => {
           New Game
         </button>
       )}
-    </>
+    </div>
   );
 };
 
