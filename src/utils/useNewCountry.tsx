@@ -16,7 +16,7 @@ const useNewCountry = () => {
       );
       setCountrySvg(result.default);
       setCurrentCountry(currentCountry);
-      console.log(currentCountry);
+    //   console.log(currentCountry);
     };
 
     if (numGuesses === 0 && game === IN_PROCESS) {
