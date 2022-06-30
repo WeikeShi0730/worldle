@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
       <div className="text-xs md:text-sm flex justify-center gap-x-1">
         <a
-          href="https://github.com/WeikeShi0730/lights-out-firebase"
+          href="https://github.com/WeikeShi0730/worldle"
           rel="noopener noreferrer"
           target="_blank"
         >
