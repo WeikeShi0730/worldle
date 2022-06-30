@@ -12,7 +12,7 @@ const GuessPanels = () => {
       {selectedCountries.map((selectedCountry, index) => {
         return (
           <div
-            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto"
+            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto px-5"
             key={index}
           >
             <GuessPanel
