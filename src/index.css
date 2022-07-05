@@ -9,11 +9,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("/public/background.jpeg");
+  /* background-image: url("/public/background.jpeg");
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
-  background-position: top center;
+  background-position: top center; */
+  background-color: #334155;
 }
 
 code {
