@@ -5,7 +5,9 @@ const CurrentCountry = () => {
   return (
     <div className="max-w-xs m-auto p-5">
       {countrySvg ? (
-        <img src={countrySvg} alt="Country SVG" className="fill-white" />
+        <svg className="w-96 h-96 fill-white">
+          <img src={countrySvg} alt="Country SVG" />
+        </svg>
       ) : null}
     </div>
   );
