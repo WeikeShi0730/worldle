@@ -96,6 +96,10 @@ const Selections = () => {
       ...base,
       color: "#FFFFFF",
     }),
+    input: (base: any) => ({
+      ...base,
+      color: "white",
+    }),
   };
 
   return (
