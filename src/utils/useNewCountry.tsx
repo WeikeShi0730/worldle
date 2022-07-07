@@ -11,10 +11,14 @@ const useNewCountry = () => {
 
   useEffect(() => {
     const dynamicImport = async () => {
-      const result = await import(
+      const shape = await import(
         `../data/countries-shape-svg/${currentCountry.value.toLowerCase()}/vector.svg`
       );
-      setCountrySvg(result.default);
+      const flag = await import(
+        `../data/countries-flag-svg/${currentCountry.value.toLowerCase()}.svg`
+      );
+      const countrySvg = { shape: shape.default, flag: flag.default };
+      setCountrySvg(countrySvg);
       setCurrentCountry(currentCountry);
     };
 
