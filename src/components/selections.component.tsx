@@ -112,6 +112,18 @@ const Selections = () => {
           onChange={(country) => {
             setCountry(country as CountryType);
           }}
+          onKeyDown={(e) => {
+            if (e.key === " ") {
+              e.preventDefault();
+            }
+            if (
+              e.key === "Enter" &&
+              country.value !== undefined &&
+              country.value !== ""
+            ) {
+              handleSubmit();
+            }
+          }}
           menuPlacement="top"
           className="w-full rounded shadow-md hover:shadow-gray-400 duration-200 "
           theme={theme}
