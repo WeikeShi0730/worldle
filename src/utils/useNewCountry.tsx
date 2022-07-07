@@ -12,11 +12,10 @@ const useNewCountry = () => {
   useEffect(() => {
     const dynamicImport = async () => {
       const result = await import(
-        `../data/countries-svg/${currentCountry.value.toLowerCase()}/vector.svg`
+        `../data/countries-shape-svg/${currentCountry.value.toLowerCase()}/vector.svg`
       );
       setCountrySvg(result.default);
       setCurrentCountry(currentCountry);
-    //   console.log(currentCountry);
     };
 
     if (numGuesses === 0 && game === IN_PROCESS) {
