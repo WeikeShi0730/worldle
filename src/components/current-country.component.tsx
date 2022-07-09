@@ -4,7 +4,6 @@ import ReactCardFlip from "react-card-flip";
 
 const CurrentCountry = () => {
   const countrySvg = useNewCountry();
-  console.log(countrySvg);
   const [flipped, setFlipped] = useState<boolean>(false);
 
   const handleClick = (event: any) => {
