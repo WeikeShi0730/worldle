@@ -16,12 +16,18 @@ const CurrentCountry = () => {
         <div className="h-full flex justify-center items-center gap-x-5">
           <ReactCardFlip isFlipped={flipped}>
             <div className="">
-              <img src={countrySvg.shape} alt="Country Shape SVG" />
-              <button onClick={handleClick}>click</button>
+              <img
+                src={countrySvg.shape}
+                alt="Country Shape SVG"
+                onClick={handleClick}
+              />
             </div>
             <div className="">
-              <img src={countrySvg.flag} alt="Country Flag SVG" />
-              <button onClick={handleClick}>click</button>
+              <img
+                src={countrySvg.flag}
+                alt="Country Flag SVG"
+                onClick={handleClick}
+              />hello
             </div>
           </ReactCardFlip>
         </div>
