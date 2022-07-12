@@ -15,14 +15,14 @@ const CurrentCountry = () => {
       {countrySvg ? (
         <div className="h-full flex justify-center items-center">
           <ReactCardFlip isFlipped={flipped}>
-            <div className="w-64 h-64">
+            <div className="w-64 h-64 flex">
               <img
                 src={countrySvg.shape}
                 alt="Country Shape SVG"
                 onClick={handleClick}
               />
             </div>
-            <div className="w-64 h-64">
+            <div className="w-64 h-64 flex">
               <img
                 src={countrySvg.flag}
                 alt="Country Flag SVG"
