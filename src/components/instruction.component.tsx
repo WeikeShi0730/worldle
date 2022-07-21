@@ -13,9 +13,7 @@ const Instruction = () => {
         <button onClick={handleClick}>?</button>
       </div>
       {open ? (
-        <div className="fixed z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-20 h-20 bg-slate-600">
-
-        </div>
+        <div className="fixed z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-20 h-20 bg-slate-600"></div>
       ) : null}
     </div>
   );
