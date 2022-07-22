@@ -13,7 +13,7 @@ const Instruction = () => {
   };
   return (
     <div>
-      <div>
+      <div className="hover:bg-opacity-50 duration-200 text-slate-300 hover:text-white">
         <button onClick={handleClick}>?</button>
       </div>
       {open ? (
