@@ -25,20 +25,21 @@ const Instruction = () => {
             >
               X
             </button>
-            <p className="">How to play</p>
+            <p className="border-b text-center">How to play</p>
             <br />
             <p>
               Guess the WORLDLE in 6 guesses. Each guess must be a valid
               country, territory, ... After each guess, you will be given a
               distance and direction hint to the target country.
             </p>
+            <br />
             <p>
               You can enable the option to click on the map to show the flag of
               the country, which would lower the difficulty of the game.
             </p>
+            <br />
             <p>Example:</p>
             <div className=""></div>
-
           </div>
         </div>
       ) : null}
