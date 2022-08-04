@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GuessPanel from "./guess-panel.component";
 
 const Instruction = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -39,7 +40,30 @@ const Instruction = () => {
             </p>
             <br />
             <p>Example:</p>
-            <div className=""></div>
+            <div className="text-base">
+              <div className="flex w-full h-10 my-1 rounded text-white">
+                <div className="country flex justify-center items-center w-7/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+                  Canada
+                </div>
+                <div className="distance flex justify-center items-center w-3/12 border-2 mx-1 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+                  1539KM
+                </div>
+                <div className="direction flex justify-center items-center w-2/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+                  N
+                </div>
+              </div>
+              <div className="flex w-full h-10 my-1 rounded text-white">
+                <div className="country flex justify-center items-center w-7/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+                  USA
+                </div>
+                <div className="distance flex justify-center items-center w-3/12 border-2 mx-1 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+                  ✅
+                </div>
+                <div className="direction flex justify-center items-center w-2/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+                  ✅
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       ) : null}
