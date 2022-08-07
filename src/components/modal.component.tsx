@@ -52,7 +52,7 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
     <div className="fixed z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
       <div className="h-full flex flex-col items-center justify-center m-10 bg-slate-200 text-white rounded-lg backdrop-blur-md bg-opacity-20 shadow-md">
         <button
-          className="self-end m-5 text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700"
+          className="self-end m-5 text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
           onClick={handleClickClose}
         >
           X
@@ -60,7 +60,7 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         <div className="px-16 flex flex-col items-center justify-center">
           {message()}
           <button
-            className="m-5 p-2 w-40 bg-slate-700 bg-opacity-70 shadow rounded hover:bg-opacity-50 hover:shadow-md duration-200"
+            className="m-5 p-2 w-40 bg-slate-700 bg-opacity-70 shadow rounded hover:bg-opacity-50 hover:shadow-md duration-200 font-light"
             onClick={handleClickNewGame}
           >
             New Game

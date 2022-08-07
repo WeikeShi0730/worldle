@@ -133,14 +133,14 @@ const Selections = () => {
       {game === IN_PROCESS ? (
         <button
           onClick={handleSubmit}
-          className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white bg-opacity-90 hover:bg-opacity-100 rounded shadow hover:shadow-md transform duration-200 ease-in-out"
+          className="flex justify-center items-center w-40 m-auto p-2 my-5 font-light bg-white bg-opacity-90 hover:bg-opacity-100 rounded shadow hover:shadow-md transform duration-200 ease-in-out"
         >
           Submit
         </button>
       ) : (
         <button
           onClick={handleNewGame}
-          className="flex justify-center items-center w-40 m-auto p-2 my-5 bg-white bg-opacity-90 hover:bg-opacity-100 rounded shadow hover:shadow-md transform duration-200 ease-in-out"
+          className="flex justify-center items-center w-40 m-auto p-2 my-5 font-light bg-white bg-opacity-90 hover:bg-opacity-100 rounded shadow hover:shadow-md transform duration-200 ease-in-out"
         >
           New Game
         </button>

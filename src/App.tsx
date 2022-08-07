@@ -60,7 +60,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-between">
+    <div className="h-screen flex flex-col justify-between font-light">
       <Header />
       <AppContext.Provider value={value}>
         <CurrentCountry />
