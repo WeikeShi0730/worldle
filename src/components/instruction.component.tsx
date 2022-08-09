@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useClickOutside } from "../utils/useClickOutside";
 
 const Instruction = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
+  useClickOutside(ref, () => setOpen(() => false));
 
   const handleMarkClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
@@ -12,7 +15,7 @@ const Instruction = () => {
     setOpen(false);
   };
   return (
-    <div>
+    <div ref={ref}>
       <div className="hover:bg-opacity-50 duration-200 text-slate-300 hover:text-white font-light">
         <button onClick={handleMarkClick}>?</button>
       </div>
