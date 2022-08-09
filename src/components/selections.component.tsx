@@ -89,10 +89,8 @@ const Selections = () => {
       "&:focus, :hover": {
         border: "2px solid white",
       },
-      color: "#FFFFFF",
     }),
-
-    singleValue: (base: any) => ({
+    singleValue: (base: any, _: any) => ({
       ...base,
       color: "#FFFFFF",
     }),
@@ -125,7 +123,7 @@ const Selections = () => {
             }
           }}
           menuPlacement="top"
-          className="w-full rounded shadow-md hover:shadow-gray-400 duration-200 "
+          className="w-full rounded shadow-md hover:shadow-gray-400 duration-200"
           theme={theme}
           styles={customStyles}
         />
