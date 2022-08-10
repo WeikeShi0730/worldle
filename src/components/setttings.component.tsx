@@ -29,6 +29,11 @@ const Settings = () => {
               X
             </button>
             <p className="border-b text-center text-2xl">Settings</p>
+            <br />
+            <div className="flex items-center justify-between">
+              <div className="">Flip to see flags</div>
+              <div className="">Toggle</div>
+            </div>
           </div>
         </div>
       ) : null}
