@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 import { CountryType, differenceType } from "./interfaces";
 import Header from "./components/header.component";
 import CurrentCountry from "./components/current-country.component";
@@ -48,6 +48,20 @@ function App() {
     {},
   ] as differenceType[]);
   const [enableFlag, setEnableFlag] = useState<boolean>(false);
+
+  useEffect(() => {
+    var enableFlagSession = sessionStorage.getItem("enableFlagSession");
+    var enableFlagToggle;
+    if (enableFlagSession === null || enableFlagSession === "false") {
+      enableFlagSession = "false";
+      enableFlagToggle = false;
+    } else {
+      enableFlagSession = "true";
+      enableFlagToggle = true;
+    }
+    // sessionStorage.setItem("enableFlagSession", enableFlagSession);
+    setEnableFlag(enableFlagToggle);
+  }, []);
 
   const value = {
     currentCountry,

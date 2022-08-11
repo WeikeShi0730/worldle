@@ -18,6 +18,7 @@ const Settings = () => {
   };
   const handleToggle = () => {
     setEnableFlag(!enableFlag);
+    sessionStorage.setItem("enableFlagSession", (!enableFlag).toString());
   };
   return (
     <div ref={ref}>
