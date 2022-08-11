@@ -19,6 +19,8 @@ interface contextType {
   setGame: (game: string) => void;
   difference: differenceType[];
   setDifference: (difference: differenceType[]) => void;
+  enableFlag: boolean;
+  setEnableFlag: (enableFlag: boolean) => void;
 }
 
 export const AppContext = createContext<contextType>({} as contextType);
@@ -45,6 +47,7 @@ function App() {
     {},
     {},
   ] as differenceType[]);
+  const [enableFlag, setEnableFlag] = useState<boolean>(false);
 
   const value = {
     currentCountry,
@@ -57,18 +60,20 @@ function App() {
     setGame,
     difference,
     setDifference,
+    enableFlag,
+    setEnableFlag,
   };
 
   return (
     <div className="h-screen flex flex-col justify-between font-light">
-      <Header />
       <AppContext.Provider value={value}>
+        <Header />
         <CurrentCountry />
         <GuessPanels />
         <Selections />
         <Result />
+        <Footer />
       </AppContext.Provider>
-      <Footer />
     </div>
   );
 }

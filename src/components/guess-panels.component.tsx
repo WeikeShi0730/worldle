@@ -4,8 +4,7 @@ import { AppContext } from "../App";
 import { differenceType } from "../interfaces";
 
 const GuessPanels = () => {
-  const { difference } = useContext(AppContext);
-  const { selectedCountries } = useContext(AppContext);
+  const { difference, selectedCountries } = useContext(AppContext);
 
   return (
     <div>

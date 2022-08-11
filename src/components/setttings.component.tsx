@@ -1,8 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { useClickOutside } from "../utils/useClickOutside";
+import { AppContext } from "../App";
 
 const Settings = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const { enableFlag, setEnableFlag } = useContext(AppContext);
   const ref = useRef<HTMLDivElement>(null);
   useClickOutside(ref, () => setOpen(() => false));
 
@@ -13,6 +15,10 @@ const Settings = () => {
   const handleClickClose = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     setOpen(false);
+  };
+  const handleToggle = (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
+    setEnableFlag(!enableFlag);
   };
   return (
     <div ref={ref}>
@@ -32,7 +38,12 @@ const Settings = () => {
             <br />
             <div className="flex items-center justify-between">
               <div className="">Flip to see flags</div>
-              <div className="">Toggle</div>
+              <button
+                className="font-light p-2 bg-orange-500"
+                onClick={handleToggle}
+              >
+                Toggle
+              </button>
             </div>
           </div>
         </div>
