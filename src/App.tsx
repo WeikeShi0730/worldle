@@ -53,13 +53,10 @@ function App() {
     var enableFlagSession = sessionStorage.getItem("enableFlagSession");
     var enableFlagToggle;
     if (enableFlagSession === null || enableFlagSession === "false") {
-      enableFlagSession = "false";
       enableFlagToggle = false;
     } else {
-      enableFlagSession = "true";
       enableFlagToggle = true;
     }
-    // sessionStorage.setItem("enableFlagSession", enableFlagSession);
     setEnableFlag(enableFlagToggle);
   }, []);
 
