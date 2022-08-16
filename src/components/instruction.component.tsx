@@ -21,14 +21,14 @@ const Instruction = () => {
       </div>
       {open ? (
         <div className="fixed w-96 z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-200 text-white text-base rounded-lg backdrop-blur-md bg-opacity-20 shadow-md">
-          <div className="flex flex-col m-5 sm:m-10">
+          <div className="flex flex-col m-5 sm:m-10 text-sm md:text-base">
             <button
-              className="self-end text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
+              className="self-end text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
               onClick={handleClickClose}
             >
               X
             </button>
-            <p className="border-b text-center text-2xl">How to play</p>
+            <p className="border-b text-center text-lg md:text-2xl">How to play</p>
             <br />
             <p>
               Guess the <span className="font-medium">WORLDLE</span> in 6

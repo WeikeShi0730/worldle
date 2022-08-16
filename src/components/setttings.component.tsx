@@ -29,14 +29,14 @@ const Settings = () => {
         <div className="fixed w-96 z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-200 text-white text-base rounded-lg backdrop-blur-md bg-opacity-20 shadow-md">
           <div className="flex flex-col m-5 sm:m-10">
             <button
-              className="self-end text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
+              className="self-end text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
               onClick={handleClickClose}
             >
               X
             </button>
-            <p className="border-b text-center text-2xl">Settings</p>
+            <p className="border-b text-center text-lg md:text-2xl">Settings</p>
             <br />
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between text-sm md:text-base">
               <div className="">Flip to see flags</div>
               <label className="inline-flex relative items-center cursor-pointer">
                 <input

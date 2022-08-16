@@ -11,7 +11,7 @@ const GuessPanel = ({ selectedCountry, difference }: GuessPanelType) => {
   const { currentCountry } = useContext(AppContext);
 
   return (
-    <div className="flex w-full h-10 my-1 rounded text-white">
+    <div className="flex w-full h-10 my-1 rounded text-white text-sm md:text-base">
       <div className="country flex justify-center items-center w-7/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
         {selectedCountry.label}
       </div>

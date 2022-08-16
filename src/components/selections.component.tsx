@@ -100,7 +100,7 @@ const Selections = () => {
   };
 
   return (
-    <div className="">
+    <div className="text-sm md:text-base">
       <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 px-5">
         <Select
           isDisabled={game === IN_PROCESS ? false : true}
