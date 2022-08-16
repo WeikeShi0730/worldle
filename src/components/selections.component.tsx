@@ -58,7 +58,6 @@ const Selections = () => {
       setCountry({} as CountryType);
       setNumGuesses(numGuesses + 1);
     } else {
-      alert("No country found");
       return;
     }
   };
