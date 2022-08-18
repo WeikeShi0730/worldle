@@ -55,7 +55,7 @@ const Instruction = () => {
                 <div className="country flex justify-center items-center w-7/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
                   Canada
                 </div>
-                <div className="distance flex justify-center items-center w-3/12 border-2 mx-1 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+                <div className="distance flex justify-center items-center w-3/12 border-2 mx-1 px-8 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
                   2264KM
                 </div>
                 <div className="direction flex justify-center items-center w-2/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
