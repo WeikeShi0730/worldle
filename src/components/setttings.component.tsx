@@ -6,7 +6,7 @@ const Settings = () => {
   const [open, setOpen] = useState<boolean>(false);
   const { enableFlag, setEnableFlag } = useContext(AppContext);
   const ref = useRef<HTMLDivElement>(null);
-  useClickOutside(ref, () => setOpen(() => false));
+  useClickOutside(ref, () => setOpen(false));
 
   const handleMarkClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
