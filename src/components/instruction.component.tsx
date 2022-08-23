@@ -4,7 +4,7 @@ import { useClickOutside } from "../utils/useClickOutside";
 const Instruction = () => {
   const [open, setOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
-  useClickOutside(ref, () => setOpen(() => false));
+  useClickOutside(ref, () => setOpen(false));
 
   const handleMarkClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
