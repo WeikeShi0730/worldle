@@ -1,7 +1,7 @@
 import { useState, useRef, useContext } from "react";
 import { useClickOutside } from "../utils/useClickOutside";
 import { AppContext } from "../App";
-import { VscGear } from "react-icons/vsc";
+import { VscGear, VscClose } from "react-icons/vsc";
 
 const Settings = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -35,7 +35,7 @@ const Settings = () => {
               className="self-end text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
               onClick={handleClickClose}
             >
-              X
+              <VscClose />
             </button>
             <p className="border-b text-center text-lg md:text-2xl">Settings</p>
             <br />

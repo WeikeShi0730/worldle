@@ -3,6 +3,7 @@ import { AppContext } from "../App";
 import { FINISHED_WIN, IN_PROCESS } from "../constants";
 import { CountryType, differenceType } from "../interfaces";
 import { useClickOutside } from "../utils/useClickOutside";
+import { VscClose } from "react-icons/vsc";
 
 const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   const {
@@ -65,7 +66,7 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           className="text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
           onClick={handleClickClose}
         >
-          X
+          <VscClose />
         </button>
         <div className="flex flex-col items-center justify-center">
           {message()}
