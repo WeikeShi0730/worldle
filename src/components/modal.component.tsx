@@ -63,7 +63,7 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
     >
       <div className="flex flex-col m-5 sm:m-10 text-white">
         <button
-          className="text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
+          className="flex content-center items-center self-end text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
           onClick={handleClickClose}
         >
           <VscClose />

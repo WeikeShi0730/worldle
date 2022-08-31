@@ -17,7 +17,7 @@ const Instruction = () => {
   };
   return (
     <div ref={ref}>
-      <div className="hover:bg-opacity-50 duration-200 text-slate-300 hover:text-white font-light">
+      <div className="flex content-center items-center hover:bg-opacity-50 duration-200 text-slate-300 hover:text-white font-light">
         <button onClick={handleMarkClick}>
           <VscQuestion />
         </button>
@@ -26,7 +26,7 @@ const Instruction = () => {
         <div className="fixed w-80 md:w-96 z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-200 text-white text-base rounded-lg backdrop-blur-md bg-opacity-20 shadow-md">
           <div className="flex flex-col m-5 sm:m-10 text-sm md:text-base">
             <button
-              className="self-end text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
+              className="flex content-center items-center self-end text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
               onClick={handleClickClose}
             >
               <VscClose />
