@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useClickOutside } from "../utils/useClickOutside";
+import { VscQuestion } from "react-icons/vsc";
 
 const Instruction = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -17,7 +18,9 @@ const Instruction = () => {
   return (
     <div ref={ref}>
       <div className="hover:bg-opacity-50 duration-200 text-slate-300 hover:text-white font-light">
-        <button onClick={handleMarkClick}>?</button>
+        <button onClick={handleMarkClick}>
+          <VscQuestion />
+        </button>
       </div>
       {open ? (
         <div className="fixed w-80 md:w-96 z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-200 text-white text-base rounded-lg backdrop-blur-md bg-opacity-20 shadow-md">
