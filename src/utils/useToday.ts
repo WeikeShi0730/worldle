@@ -1,5 +1,6 @@
+import seedrandom from "seedrandom";
+
 const useToday = () => {
-  var seedrandom = require("seedrandom");
   const todayCountry = {};
   let generate_random_number = seedrandom("Johnson");
   console.log(generate_random_number());
