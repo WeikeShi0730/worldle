@@ -1,4 +1,9 @@
-const useToday = () => {};
+const useToday = () => {
+  const todayCountry = {};
+  // seed random for each day
+
+  return todayCountry;
+};
 
 export default useToday;
 
