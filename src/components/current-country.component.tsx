@@ -7,6 +7,7 @@ import { AppContext } from "../App";
 const CurrentCountry = () => {
   const todayCountry = useToday();
   const countrySvg = useNewCountry();
+  
   const [flipped, setFlipped] = useState<boolean>(false);
   const { enableFlag } = useContext(AppContext);
 

@@ -1,9 +1,11 @@
 import seedrandom from "seedrandom";
+import { countries } from "../data/countries";
 
 const useToday = () => {
-  const todayCountry = {};
-  let generate_random_number = seedrandom("Johnson");
-  console.log(generate_random_number());
+  const todayDate = new Date();
+  const decimal = seedrandom(todayDate.toLocaleDateString())();
+  const index = Math.floor(decimal * countries.length);
+  const todayCountry = countries[index];
 
   return todayCountry;
 };
