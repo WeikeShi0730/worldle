@@ -1,6 +1,8 @@
 const useToday = () => {
+  var seedrandom = require("seedrandom");
   const todayCountry = {};
-  // seed random for each day
+  let generate_random_number = seedrandom("Johnson");
+  console.log(generate_random_number());
 
   return todayCountry;
 };
