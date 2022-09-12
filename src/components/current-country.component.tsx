@@ -1,13 +1,10 @@
 import { useState, useContext } from "react";
-import useNewCountry from "../utils/useNewCountry";
 import ReactCardFlip from "react-card-flip";
 import useToday from "../utils/useToday";
 import { AppContext } from "../App";
 
 const CurrentCountry = () => {
-  const todayCountry = useToday();
-  const countrySvg = useNewCountry();
-  
+  const countrySvg = useToday();
   const [flipped, setFlipped] = useState<boolean>(false);
   const { enableFlag } = useContext(AppContext);
 
