@@ -6,7 +6,7 @@ import { IN_PROCESS } from "../constants";
 
 const useToday = () => {
   const [countrySvg, setCountrySvg] = useState<any>();
-  const { setCurrentCountry, numGuesses, game } = useContext(AppContext);
+  const { setTodayCountry, numGuesses, game } = useContext(AppContext);
   const todayDate = new Date();
   const decimal = seedrandom(todayDate.toLocaleDateString())();
   const index = Math.floor(decimal * countries.length);
@@ -22,7 +22,7 @@ const useToday = () => {
       );
       const countrySvg = { shape: shape.default, flag: flag.default };
       setCountrySvg(countrySvg);
-      setCurrentCountry(todayCountry);
+      setTodayCountry(todayCountry);
     };
 
     if (numGuesses === 0 && game === IN_PROCESS) {

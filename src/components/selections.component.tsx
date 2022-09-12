@@ -8,7 +8,7 @@ import { getDistance, convertDistance, getCompassDirection } from "geolib";
 
 const Selections = () => {
   const {
-    currentCountry,
+    todayCountry,
     numGuesses,
     setNumGuesses,
     selectedCountries,
@@ -36,8 +36,8 @@ const Selections = () => {
       setSelectedCountries(newCountries);
 
       const currentCountryPos = {
-        latitude: currentCountry.latitude,
-        longitude: currentCountry.longitude,
+        latitude: todayCountry.latitude,
+        longitude: todayCountry.longitude,
       };
       const selectedCountryPos = {
         latitude: selectedCountries[numGuesses]?.latitude,

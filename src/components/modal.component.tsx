@@ -7,7 +7,7 @@ import { VscClose } from "react-icons/vsc";
 
 const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   const {
-    currentCountry,
+    todayCountry,
     game,
     setGame,
     numGuesses,
@@ -50,7 +50,7 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
       <div className="p-5 text-sm md:text-base text-center">
         You didn't get it, the country is
         <div className="text-base md:text-xl italic">
-          {currentCountry.label}.
+          {todayCountry.label}.
         </div>
       </div>
     );

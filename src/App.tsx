@@ -9,8 +9,8 @@ import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
 
 interface contextType {
-  currentCountry: CountryType;
-  setCurrentCountry: (currentCountry: CountryType) => void;
+  todayCountry: CountryType;
+  setTodayCountry: (currentCountry: CountryType) => void;
   numGuesses: number;
   setNumGuesses: (numGuesses: number) => void;
   selectedCountries: CountryType[];
@@ -26,7 +26,7 @@ interface contextType {
 export const AppContext = createContext<contextType>({} as contextType);
 
 function App() {
-  const [currentCountry, setCurrentCountry] = useState<CountryType>(
+  const [todayCountry, setTodayCountry] = useState<CountryType>(
     {} as CountryType
   );
   const [numGuesses, setNumGuesses] = useState<number>(0);
@@ -61,8 +61,8 @@ function App() {
   }, []);
 
   const value = {
-    currentCountry,
-    setCurrentCountry,
+    todayCountry,
+    setTodayCountry,
     numGuesses,
     setNumGuesses,
     selectedCountries,
