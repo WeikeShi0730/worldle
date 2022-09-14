@@ -20,4 +20,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-TODO： Create function to generate one game a day, store session data to keep track if it's done today.
+TODO： store session data to keep track player status today.
