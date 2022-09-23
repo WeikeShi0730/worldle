@@ -1,30 +1,13 @@
 import { useContext, useRef } from "react";
 import { AppContext } from "../App";
-import { FINISHED_WIN, IN_PROCESS } from "../constants";
-import { CountryType, differenceType } from "../interfaces";
+import { FINISHED_WIN } from "../constants";
 import { useClickOutside } from "../utils/useClickOutside";
 import { VscClose } from "react-icons/vsc";
 
 const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
-  const {
-    todayCountry,
-    game,
-    setGame,
-    numGuesses,
-    setNumGuesses,
-    setSelectedCountries,
-    setDifference,
-  } = useContext(AppContext);
+  const { todayCountry, game, numGuesses } = useContext(AppContext);
   const ref = useRef<HTMLDivElement>(null);
   useClickOutside(ref, () => setOpen(false));
-
-  const handleClickNewGame = () => {
-    setOpen(false);
-    setNumGuesses(0);
-    setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountryType[]);
-    setDifference([{}, {}, {}, {}, {}, {}] as differenceType[]);
-    setGame(IN_PROCESS);
-  };
 
   const handleClickClose = () => {
     setOpen(false);
@@ -49,9 +32,7 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
     ) : (
       <div className="p-5 text-sm md:text-base text-center">
         You didn't get it, the country is
-        <div className="text-base md:text-xl italic">
-          {todayCountry.label}.
-        </div>
+        <div className="text-base md:text-xl italic">{todayCountry.label}.</div>
       </div>
     );
   };
@@ -70,12 +51,6 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         </button>
         <div className="flex flex-col items-center justify-center">
           {message()}
-          <button
-            className="m-5 p-2 w-40 bg-slate-700 bg-opacity-70 shadow rounded hover:bg-opacity-50 hover:shadow-md duration-200 font-light text-sm md:text-base"
-            onClick={handleClickNewGame}
-          >
-            New Game
-          </button>
         </div>
       </div>
     </div>
