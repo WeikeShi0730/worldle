@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import seedrandom from "seedrandom";
+import getTodaySeed from "./getTodaySeed";
 import { AppContext } from "../App";
 import { countries } from "../data/countries";
 import { IN_PROCESS } from "../constants";
@@ -7,9 +7,8 @@ import { IN_PROCESS } from "../constants";
 const useToday = () => {
   const [countrySvg, setCountrySvg] = useState<any>();
   const { setTodayCountry, numGuesses, game } = useContext(AppContext);
-  const todayDate = new Date();
-  const decimal = seedrandom(todayDate.toLocaleDateString())();
-  const index = Math.floor(decimal * countries.length);
+  const random = getTodaySeed();
+  const index = Math.floor(random * countries.length);
   const todayCountry = countries[index];
 
   useEffect(() => {

@@ -58,6 +58,9 @@ function App() {
       enableFlagToggle = true;
     }
     setEnableFlag(enableFlagToggle);
+
+    // var userTodayRecord = localStorage.getItem()
+
   }, []);
 
   const value = {
