@@ -50,13 +50,14 @@ function App() {
     }
     setEnableFlag(enableFlagToggle);
 
-    // const random = getTodaySeed();
-    // const userTodayRecord = JSON.parse(
-    //   localStorage.getItem(random.toString()) as string
-    // );
-    // console.log(userTodayRecord);
-    // if (userTodayRecord !== undefined && userTodayRecord !== null) {
-    // }
+    const random = getTodaySeed();
+    const userTodayRecord = JSON.parse(
+      localStorage.getItem(random.toString()) as string
+    );
+
+    if (userTodayRecord !== undefined && userTodayRecord !== null) {
+      setSelectedCountries(userTodayRecord);
+    }
   }, []);
 
   const value = {

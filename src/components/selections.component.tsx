@@ -56,7 +56,6 @@ const Selections = () => {
       country.distance = distance;
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
-      console.log(newCountries);
 
       // Save to locaStorage, TODO: add TTL
       const random = getTodaySeed();
