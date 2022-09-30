@@ -2,9 +2,10 @@ import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Select from "react-select";
 import { countries } from "../data/countries";
-import { CountryType, differenceType } from "../interfaces";
+import { CountryType } from "../interfaces";
 import { IN_PROCESS } from "../constants";
 import { getDistance, convertDistance, getCompassDirection } from "geolib";
+import getTodaySeed from "../utils/getTodaySeed";
 
 const Selections = () => {
   const {
@@ -15,14 +16,14 @@ const Selections = () => {
     setSelectedCountries,
     game,
     setGame,
-    difference,
-    setDifference,
   } = useContext(AppContext);
   const [country, setCountry] = useState<CountryType>({
     value: "",
     label: "",
     latitude: 0,
     longitude: 0,
+    distance: 0,
+    direction: "",
   });
 
   const handleSubmit = () => {
@@ -31,17 +32,14 @@ const Selections = () => {
       country.value !== null &&
       country.value !== ""
     ) {
-      let newCountries = selectedCountries;
-      newCountries[numGuesses] = country;
-      setSelectedCountries(newCountries);
-
+      // move out
       const currentCountryPos = {
         latitude: todayCountry.latitude,
         longitude: todayCountry.longitude,
       };
       const selectedCountryPos = {
-        latitude: selectedCountries[numGuesses]?.latitude,
-        longitude: selectedCountries[numGuesses]?.longitude,
+        latitude: country?.latitude,
+        longitude: country?.longitude,
       };
       const distance = convertDistance(
         getDistance(currentCountryPos, selectedCountryPos, 1000),
@@ -51,9 +49,19 @@ const Selections = () => {
         currentCountryPos,
         selectedCountryPos
       );
-      let newDifferenceArray = difference;
-      newDifferenceArray[numGuesses] = { distance, direction };
-      setDifference(newDifferenceArray);
+      let newCountries = selectedCountries;
+      country.direction = direction;
+      country.distance = distance;
+      newCountries[numGuesses] = country;
+      setSelectedCountries(newCountries);
+      console.log(newCountries);
+
+      // Save to locaStorage
+      const random = getTodaySeed();
+      localStorage.setItem(
+        random.toString() as string,
+        JSON.stringify(newCountries)
+      );
 
       setCountry({} as CountryType);
       setNumGuesses(numGuesses + 1);
@@ -65,7 +73,6 @@ const Selections = () => {
   const handleNewGame = () => {
     setNumGuesses(0);
     setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountryType[]);
-    setDifference([{}, {}, {}, {}, {}, {}] as differenceType[]);
     setGame(IN_PROCESS);
   };
 

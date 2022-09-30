@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import { CountryType, differenceType } from "../interfaces";
+import { CountryType } from "../interfaces";
 import { AppContext } from "../App";
 
 type GuessPanelType = {
   selectedCountry: CountryType;
-  difference: differenceType;
+  // difference: differenceType;
 };
 
-const GuessPanel = ({ selectedCountry, difference }: GuessPanelType) => {
+const GuessPanel = ({ selectedCountry }: GuessPanelType) => {
   const { todayCountry } = useContext(AppContext);
 
   return (
@@ -19,15 +19,15 @@ const GuessPanel = ({ selectedCountry, difference }: GuessPanelType) => {
         {todayCountry.value !== undefined &&
         selectedCountry.value === todayCountry.value
           ? "✅"
-          : difference.distance
-          ? difference.distance + "KM"
+          : selectedCountry.distance
+          ? selectedCountry.distance + "KM"
           : null}
       </div>
       <div className="direction flex justify-center items-center w-2/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
         {todayCountry.value !== undefined &&
         selectedCountry.value === todayCountry.value
           ? "✅"
-          : difference.direction}
+          : selectedCountry.direction}
       </div>
     </div>
   );
