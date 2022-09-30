@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import GuessPanel from "./guess-panel.component";
 import { AppContext } from "../App";
-// import { differenceType } from "../interfaces";
 
 const GuessPanels = () => {
   const { selectedCountries } = useContext(AppContext);
@@ -16,7 +15,6 @@ const GuessPanels = () => {
           >
             <GuessPanel
               selectedCountry={selectedCountry}
-              // difference={difference[index] as differenceType}
             />
           </div>
         );

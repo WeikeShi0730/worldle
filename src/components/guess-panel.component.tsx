@@ -4,7 +4,6 @@ import { AppContext } from "../App";
 
 type GuessPanelType = {
   selectedCountry: CountryType;
-  // difference: differenceType;
 };
 
 const GuessPanel = ({ selectedCountry }: GuessPanelType) => {

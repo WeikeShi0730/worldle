@@ -18,8 +18,6 @@ interface contextType {
   setSelectedCountries: (selectedCountries: CountryType[]) => void;
   game: string;
   setGame: (game: string) => void;
-  // difference: differenceType[];
-  // setDifference: (difference: differenceType[]) => void;
   enableFlag: boolean;
   setEnableFlag: (enableFlag: boolean) => void;
 }
@@ -40,14 +38,6 @@ function App() {
     {},
   ] as CountryType[]);
   const [game, setGame] = useState<string>(IN_PROCESS);
-  // const [difference, setDifference] = useState<differenceType[]>([
-  //   {},
-  //   {},
-  //   {},
-  //   {},
-  //   {},
-  //   {},
-  // ] as differenceType[]);
   const [enableFlag, setEnableFlag] = useState<boolean>(false);
 
   useEffect(() => {
@@ -78,8 +68,6 @@ function App() {
     setSelectedCountries,
     game,
     setGame,
-    // difference,
-    // setDifference,
     enableFlag,
     setEnableFlag,
   };

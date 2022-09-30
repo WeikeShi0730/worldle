@@ -37,6 +37,8 @@ const Selections = () => {
         latitude: todayCountry.latitude,
         longitude: todayCountry.longitude,
       };
+      //
+
       const selectedCountryPos = {
         latitude: country?.latitude,
         longitude: country?.longitude,
@@ -56,7 +58,7 @@ const Selections = () => {
       setSelectedCountries(newCountries);
       console.log(newCountries);
 
-      // Save to locaStorage
+      // Save to locaStorage, TODO: add TTL
       const random = getTodaySeed();
       localStorage.setItem(
         random.toString() as string,
