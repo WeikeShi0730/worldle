@@ -15,7 +15,6 @@ const Selections = () => {
     selectedCountries,
     setSelectedCountries,
     game,
-    setGame,
   } = useContext(AppContext);
   const [country, setCountry] = useState<CountryType>({
     value: "",
@@ -26,19 +25,17 @@ const Selections = () => {
     direction: "",
   });
 
+  const currentCountryPos = {
+    latitude: todayCountry.latitude,
+    longitude: todayCountry.longitude,
+  };
+
   const handleSubmit = () => {
     if (
       country.value !== undefined &&
       country.value !== null &&
       country.value !== ""
     ) {
-      // move out
-      const currentCountryPos = {
-        latitude: todayCountry.latitude,
-        longitude: todayCountry.longitude,
-      };
-      //
-
       const selectedCountryPos = {
         latitude: country?.latitude,
         longitude: country?.longitude,
