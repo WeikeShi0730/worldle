@@ -57,6 +57,10 @@ function App() {
 
     if (userTodayRecord !== undefined && userTodayRecord !== null) {
       setSelectedCountries(userTodayRecord);
+      var count = userTodayRecord.filter((e: CountryType) => {
+        return e.value !== undefined;
+      }).length;
+      setNumGuesses(count);
     }
   }, []);
 

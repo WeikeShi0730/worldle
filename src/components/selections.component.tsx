@@ -71,11 +71,7 @@ const Selections = () => {
     }
   };
 
-  const handleNewGame = () => {
-    setNumGuesses(0);
-    setSelectedCountries([{}, {}, {}, {}, {}, {}] as CountryType[]);
-    setGame(IN_PROCESS);
-  };
+  const handleShare = () => {};
 
   const theme = (theme: any) => ({
     ...theme,
@@ -144,10 +140,10 @@ const Selections = () => {
         </button>
       ) : (
         <button
-          onClick={handleNewGame}
+          onClick={handleShare}
           className="flex justify-center items-center w-40 m-auto p-2 my-5 font-light bg-white bg-opacity-90 hover:bg-opacity-100 rounded shadow hover:shadow-md transform duration-200 ease-in-out"
         >
-          New Game
+          Share
         </button>
       )}
     </div>
