@@ -52,6 +52,8 @@ const Instruction = () => {
               the country, which would lower the difficulty of the game.
             </p>
             <br />
+            <p>The game refreshes once a day.</p>
+            <br />
             <p>Example:</p>
             <div className="">
               <div className="flex w-full h-10 my-1 rounded text-white">
