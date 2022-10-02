@@ -17,15 +17,15 @@ const Settings = () => {
     event.preventDefault();
     setOpen(false);
   };
-  const handleToggle = (e: any) => {
-    switch (e.target.value) {
+  const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    switch (e.currentTarget.value) {
       case "flag":
         setEnableFlag(!enableFlag);
         sessionStorage.setItem("enableFlagSession", (!enableFlag).toString());
         break;
       case "unit":
         setUnit(!unit);
-        sessionStorage.setItem("unit", (!unit).toString());
+        sessionStorage.setItem("unitSession", (!unit).toString());
         break;
       default:
         break;
@@ -75,7 +75,7 @@ const Settings = () => {
                   className="sr-only peer"
                   onChange={handleToggle}
                   checked={enableFlag}
-                  value="falg"
+                  value="flag"
                 />
                 <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
               </label>

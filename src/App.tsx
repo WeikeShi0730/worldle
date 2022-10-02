@@ -45,13 +45,18 @@ function App() {
 
   useEffect(() => {
     var enableFlagSession = sessionStorage.getItem("enableFlagSession");
-    var enableFlagToggle;
+    var enableFlagToggle = true;
     if (enableFlagSession === null || enableFlagSession === "false") {
       enableFlagToggle = false;
-    } else {
-      enableFlagToggle = true;
     }
     setEnableFlag(enableFlagToggle);
+
+    var unitSession = sessionStorage.getItem("unitSession");
+    var unitToggle = true;
+    if (unitSession === null || unitSession === "false") {
+      unitToggle = false;
+    }
+    setUnit(unitToggle);
 
     const random = getTodaySeed();
     const userTodayRecord = JSON.parse(
