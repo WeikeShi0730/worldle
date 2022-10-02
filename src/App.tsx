@@ -20,6 +20,8 @@ interface contextType {
   setGame: (game: string) => void;
   enableFlag: boolean;
   setEnableFlag: (enableFlag: boolean) => void;
+  unit: boolean;
+  setUnit: (unit: boolean) => void;
 }
 
 export const AppContext = createContext<contextType>({} as contextType);
@@ -39,6 +41,7 @@ function App() {
   ] as CountryType[]);
   const [game, setGame] = useState<string>(IN_PROCESS);
   const [enableFlag, setEnableFlag] = useState<boolean>(false);
+  const [unit, setUnit] = useState<boolean>(true);
 
   useEffect(() => {
     var enableFlagSession = sessionStorage.getItem("enableFlagSession");
@@ -75,6 +78,8 @@ function App() {
     setGame,
     enableFlag,
     setEnableFlag,
+    unit,
+    setUnit,
   };
 
   return (
