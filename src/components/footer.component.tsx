@@ -11,7 +11,8 @@ const Footer = () => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          @ <span className="hover:underline">Weike Shi</span>
+          @{" "}
+          <span className="link-underline link-underline-black">Weike Shi</span>
         </a>
         <CgWebsite />
       </div>
@@ -21,7 +22,8 @@ const Footer = () => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          @ <span className="hover:underline">LinkedIn</span>
+          @{" "}
+          <span className="link-underline link-underline-black">LinkedIn</span>
         </a>
         <SiLinkedin />
       </div>
@@ -31,7 +33,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          @ <span className="hover:underline">Github</span>
+          @ <span className="link-underline link-underline-black">Github</span>
         </a>
         <SiGithub />
       </div>
@@ -41,7 +43,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          @ <span className="hover:underline">Twitter</span>
+          @ <span className="link-underline link-underline-black">Twitter</span>
         </a>
         <SiTwitter />
       </div>
