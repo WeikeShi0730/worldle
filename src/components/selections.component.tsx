@@ -64,7 +64,11 @@ const Selections = () => {
       setCountry({} as CountryType);
       setNumGuesses(numGuesses + 1);
     } else {
-      return;
+      console.log("doesnt exisit");
+      var element = document.getElementById("input-box");
+      element?.classList.add("error");
+      console.log(element?.classList);
+      // element?.classList.remove("error");
     }
   };
 
@@ -102,7 +106,10 @@ const Selections = () => {
 
   return (
     <div className="text-sm md:text-base">
-      <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 px-5">
+      <div
+        id="input-box"
+        className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 px-5"
+      >
         <Select
           isDisabled={game === IN_PROCESS ? false : true}
           options={countries}
