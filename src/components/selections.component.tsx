@@ -64,11 +64,11 @@ const Selections = () => {
       setCountry({} as CountryType);
       setNumGuesses(numGuesses + 1);
     } else {
-      console.log("doesnt exisit");
       var element = document.getElementById("input-box");
       element?.classList.add("error");
-      console.log(element?.classList);
-      // element?.classList.remove("error");
+      setTimeout(() => {
+        element?.classList.remove("error");
+      }, 1000);
     }
   };
 
