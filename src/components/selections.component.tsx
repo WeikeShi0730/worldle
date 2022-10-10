@@ -66,6 +66,7 @@ const Selections = () => {
     } else {
       var element = document.getElementById("input-box");
       element?.classList.add("error");
+      console.log(element?.classList);
       setTimeout(() => {
         element?.classList.remove("error");
       }, 1000);
