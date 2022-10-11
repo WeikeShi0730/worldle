@@ -6,6 +6,7 @@ import { CountryType } from "../interfaces";
 import { IN_PROCESS } from "../constants";
 import { getDistance, convertDistance, getCompassDirection } from "geolib";
 import getTodaySeed from "../utils/getTodaySeed";
+import createShareableResult from "../utils/createShareableResult";
 
 const Selections = () => {
   const {
@@ -72,7 +73,9 @@ const Selections = () => {
     }
   };
 
-  const handleShare = () => {};
+  const handleShare = () => {
+    createShareableResult();
+  };
 
   const theme = (theme: any) => ({
     ...theme,
