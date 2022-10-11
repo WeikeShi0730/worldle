@@ -106,11 +106,9 @@ const Selections = () => {
 
   return (
     <div className="text-sm md:text-base">
-      <div
-        id="input-box"
-        className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 px-5"
-      >
+      <div className="flex justify-evenly items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto my-5 px-5">
         <Select
+          id="input-box"
           isDisabled={game === IN_PROCESS ? false : true}
           options={countries}
           value={country}
