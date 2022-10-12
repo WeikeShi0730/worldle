@@ -69,7 +69,7 @@ const Selections = () => {
       element?.classList.add("error");
       setTimeout(() => {
         element?.classList.remove("error");
-      }, 1000);
+      }, 300);
     }
   };
 
