@@ -1,3 +1,4 @@
+import { FINISHED_WIN } from "./../constants";
 import { CountryType } from "../interfaces";
 
 const directionDictionary: { [key: string]: any } = {
@@ -32,9 +33,17 @@ const getDayOfYear = () => {
   return differenceInDays;
 };
 
-const createShareableResult = (selectedCountries: CountryType[]) => {
+const createShareableResult = (
+  selectedCountries: CountryType[],
+  game: string,
+  numGuesses: number
+) => {
   var resultString =
-    "#Worldle Day#" + getDayOfYear() + " " + selectedCountries.length + "/6\n";
+    "#Worldle Day#" +
+    getDayOfYear() +
+    " " +
+    (game === FINISHED_WIN ? numGuesses : "X") +
+    "/6\n";
   var gameResultString = selectedCountries.reduce(
     (prevString, selectedCountry) => {
       var { direction, distance } = selectedCountry;
@@ -48,10 +57,9 @@ const createShareableResult = (selectedCountries: CountryType[]) => {
     },
     ""
   );
-  resultString += gameResultString;
-  resultString += "worldle-guess.vercel.app";
+  resultString += gameResultString + "worldle-guess.vercel.app";
   console.log(resultString);
-
+  navigator.clipboard.writeText(resultString);
   return resultString;
 };
 export default createShareableResult;
