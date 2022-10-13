@@ -50,7 +50,9 @@ const createShareableResult = (
       return (
         prevString +
         distance +
-        "KM, " +
+        " KM = " +
+        Math.round((distance as number) / 1.609) +
+        " MI, " +
         directionDictionary[direction as string] +
         "\n"
       );
@@ -58,7 +60,6 @@ const createShareableResult = (
     ""
   );
   resultString += gameResultString + "worldle-guess.vercel.app";
-  console.log(resultString);
   navigator.clipboard.writeText(resultString);
   return resultString;
 };
