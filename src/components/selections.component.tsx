@@ -74,7 +74,7 @@ const Selections = () => {
   };
 
   const handleShare = () => {
-    createShareableResult();
+    createShareableResult(selectedCountries);
   };
 
   const theme = (theme: any) => ({
