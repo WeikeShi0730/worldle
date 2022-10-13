@@ -44,22 +44,21 @@ const createShareableResult = (
     " " +
     (game === FINISHED_WIN ? numGuesses : "X") +
     "/6\n";
-  var gameResultString = selectedCountries.reduce(
-    (prevString, selectedCountry) => {
-      var { direction, distance } = selectedCountry;
-      return (
-        prevString +
-        distance +
-        " KM = " +
-        Math.round((distance as number) / 1.609) +
-        " MI, " +
-        directionDictionary[direction as string] +
-        "\n"
-      );
-    },
-    ""
-  );
-  resultString += gameResultString + "worldle-guess.vercel.app";
+  for (var i = 0; i < numGuesses; i++) {
+    var { direction, distance } = selectedCountries[i];
+    resultString +=
+      distance +
+      " KM = " +
+      Math.round((distance as number) / 1.609) +
+      " MI, " +
+      (i === numGuesses - 1
+        ? game === FINISHED_WIN
+          ? "📍"
+          : directionDictionary[direction as string]
+        : directionDictionary[direction as string]) +
+      "\n";
+  }
+  resultString += "worldle-guess.vercel.app";
   navigator.clipboard.writeText(resultString);
   return resultString;
 };
