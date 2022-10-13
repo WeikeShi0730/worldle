@@ -56,7 +56,7 @@ const createShareableResult = (
           ? "📍"
           : directionDictionary[direction as string]
         : directionDictionary[direction as string]) +
-      "\n";
+      ",\n";
   }
   resultString += "worldle-guess.vercel.app";
   navigator.clipboard.writeText(resultString);
