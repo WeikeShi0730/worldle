@@ -77,10 +77,9 @@ const Selections = () => {
     createShareableResult(selectedCountries, game, numGuesses);
     var element = document.getElementById("shareButtonTooltip");
     element?.classList.remove("opacity-0");
-    element?.classList.add("opacity-100");
     setTimeout(() => {
       element?.classList.add("opacity-0");
-      element?.classList.remove("opacity-100");
+      // need optimize
     }, 1500);
   };
 
