@@ -75,6 +75,13 @@ const Selections = () => {
 
   const handleShare = () => {
     createShareableResult(selectedCountries, game, numGuesses);
+    var element = document.getElementById("shareButtonTooltip");
+    element?.classList.remove("opacity-0");
+    element?.classList.add("opacity-100");
+    setTimeout(() => {
+      element?.classList.add("opacity-0");
+      element?.classList.remove("opacity-100");
+    }, 1500);
   };
 
   const theme = (theme: any) => ({
@@ -144,12 +151,22 @@ const Selections = () => {
           Submit
         </button>
       ) : (
-        <button
-          onClick={handleShare}
-          className="flex justify-center items-center w-40 m-auto p-2 my-5 font-light bg-white bg-opacity-90 hover:bg-opacity-100 rounded shadow hover:shadow-md transform duration-200 ease-in-out"
-        >
-          Share
-        </button>
+        <>
+          <div
+            id="shareButtonTooltip"
+            className="fixed top-5 left-1/2 -translate-x-1/2 z-10 opacity-0 transform duration-200 ease-in-out"
+          >
+            <div className="flex justify-center items-center w-80 md:w-96 p-5 text-sm md:text-base bg-slate-200 text-white rounded-lg backdrop-blur-md bg-opacity-20 shadow-md">
+              Copied results to clipboard
+            </div>
+          </div>
+          <button
+            onClick={handleShare}
+            className="flex justify-center items-center w-40 m-auto p-2 my-5 font-light bg-white bg-opacity-90 hover:bg-opacity-100 rounded shadow hover:shadow-md transform duration-200 ease-in-out"
+          >
+            Share
+          </button>
+        </>
       )}
     </div>
   );
