@@ -87,7 +87,7 @@ const Selections = () => {
     ...theme,
     colors: {
       ...theme.colors,
-      text: "#FFFFFF",
+      text: "white",
       primary50: "rgba(100, 116, 139, 0.1)",
       primary25: "rgba(100, 116, 139, 0.2)",
       primary: "rgba(100, 116, 139, 0.3)",
@@ -105,7 +105,7 @@ const Selections = () => {
     }),
     singleValue: (base: any, _: any) => ({
       ...base,
-      color: "#FFFFFF",
+      color: "white",
     }),
     input: (base: any) => ({
       ...base,
