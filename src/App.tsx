@@ -24,6 +24,7 @@ interface contextType {
   unit: boolean;
   setUnit: (unit: boolean) => void;
   setCookie: any;
+  random: number;
 }
 
 export const AppContext = createContext<contextType>({} as contextType);
@@ -90,6 +91,7 @@ function App() {
     unit,
     setUnit,
     setCookie,
+    random,
   };
 
   return (

@@ -5,7 +5,6 @@ import { countries } from "../data/countries";
 import { CountryType } from "../interfaces";
 import { IN_PROCESS } from "../constants";
 import { getDistance, convertDistance, getCompassDirection } from "geolib";
-import getTodaySeed from "../utils/getTodaySeed";
 import createShareableResult from "../utils/createShareableResult";
 
 const Selections = () => {
@@ -17,6 +16,7 @@ const Selections = () => {
     setSelectedCountries,
     game,
     setCookie,
+    random,
   } = useContext(AppContext);
   const [country, setCountry] = useState<CountryType>({
     value: "",
@@ -56,7 +56,6 @@ const Selections = () => {
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
 
-      const random = getTodaySeed();
       setCookie(random.toString() as string, JSON.stringify(newCountries), {
         maxAge: 86400,
       });
