@@ -16,6 +16,7 @@ const Selections = () => {
     selectedCountries,
     setSelectedCountries,
     game,
+    setCookie,
   } = useContext(AppContext);
   const [country, setCountry] = useState<CountryType>({
     value: "",
@@ -55,12 +56,10 @@ const Selections = () => {
       newCountries[numGuesses] = country;
       setSelectedCountries(newCountries);
 
-      // Save to locaStorage, TODO: add TTL
       const random = getTodaySeed();
-      localStorage.setItem(
-        random.toString() as string,
-        JSON.stringify(newCountries)
-      );
+      setCookie(random.toString() as string, JSON.stringify(newCountries), {
+        maxAge: 86400,
+      });
 
       setCountry({} as CountryType);
       setNumGuesses(numGuesses + 1);

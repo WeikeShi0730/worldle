@@ -8,6 +8,7 @@ import Selections from "./components/selections.component";
 import Result from "./components/result.component";
 import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
+import { useCookies } from "react-cookie";
 
 interface contextType {
   todayCountry: CountryType;
@@ -22,11 +23,13 @@ interface contextType {
   setEnableFlag: (enableFlag: boolean) => void;
   unit: boolean;
   setUnit: (unit: boolean) => void;
+  setCookie: any;
 }
 
 export const AppContext = createContext<contextType>({} as contextType);
 
 function App() {
+  const random = getTodaySeed();
   const [todayCountry, setTodayCountry] = useState<CountryType>(
     {} as CountryType
   );
@@ -42,6 +45,7 @@ function App() {
   const [game, setGame] = useState<string>(IN_PROCESS);
   const [enableFlag, setEnableFlag] = useState<boolean>(false);
   const [unit, setUnit] = useState<boolean>(true);
+  const [cookies, setCookie] = useCookies([random.toString()]);
 
   useEffect(() => {
     var enableFlagSession = sessionStorage.getItem("enableFlagSession");
@@ -58,10 +62,10 @@ function App() {
     }
     setUnit(unitToggle);
 
-    const random = getTodaySeed();
-    const userTodayRecord = JSON.parse(
-      localStorage.getItem(random.toString()) as string
-    );
+    const userTodayRecord =
+      cookies && Object.keys(cookies).length !== 0
+        ? cookies[random.toString() as string]
+        : null;
 
     if (userTodayRecord !== undefined && userTodayRecord !== null) {
       setSelectedCountries(userTodayRecord);
@@ -70,7 +74,7 @@ function App() {
       }).length;
       setNumGuesses(count);
     }
-  }, []);
+  }, [cookies, random]);
 
   const value = {
     todayCountry,
@@ -85,6 +89,7 @@ function App() {
     setEnableFlag,
     unit,
     setUnit,
+    setCookie,
   };
 
   return (
