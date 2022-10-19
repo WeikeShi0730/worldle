@@ -13,7 +13,6 @@ root.render(
     <CookiesProvider>
       <App />
     </CookiesProvider>
-    ,
   </React.StrictMode>
 );
 
