@@ -74,8 +74,10 @@ const Selections = () => {
   const handleShare = () => {
     createShareableResult(selectedCountries, game, numGuesses);
     var element = document.getElementById("shareButtonTooltip");
+    element?.classList.remove("invisible");
     element?.classList.remove("opacity-0");
     setTimeout(() => {
+      element?.classList.add("invisible");
       element?.classList.add("opacity-0");
       // need optimize
     }, 1500);
@@ -151,7 +153,7 @@ const Selections = () => {
         <>
           <div
             id="shareButtonTooltip"
-            className="fixed top-5 left-1/2 -translate-x-1/2 z-10 opacity-0 transform duration-200 ease-in-out"
+            className="fixed top-5 left-1/2 -translate-x-1/2 z-10 opacity-0 invisible transform duration-200 ease-in-out"
           >
             <div className="flex justify-center items-center w-80 md:w-96 p-5 text-sm md:text-base bg-slate-200 text-white rounded-lg backdrop-blur-md bg-opacity-20 shadow-md">
               Copied results to clipboard

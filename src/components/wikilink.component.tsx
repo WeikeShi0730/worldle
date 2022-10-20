@@ -16,7 +16,6 @@ const WikiLink = () => {
   }, [todayCountry]);
 
   useMemo(() => {
-    console.log("dfsa");
     if (game === FINISHED_LOSE || game === FINISHED_WIN) {
       var element = document.getElementById("wikilink");
       element?.classList.remove("invisible");
