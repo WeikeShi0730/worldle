@@ -27,7 +27,7 @@ const Selections = () => {
     direction: "",
   });
 
-  const currentCountryPos = {
+  const todayCountryPos = {
     latitude: todayCountry.latitude,
     longitude: todayCountry.longitude,
   };
@@ -43,12 +43,12 @@ const Selections = () => {
         longitude: country?.longitude,
       };
       const distance = convertDistance(
-        getDistance(currentCountryPos, selectedCountryPos, 1000),
+        getDistance(todayCountryPos, selectedCountryPos, 1000),
         "km"
       );
       const direction = getCompassDirection(
-        currentCountryPos,
-        selectedCountryPos
+        selectedCountryPos,
+        todayCountryPos
       );
       let newCountries = selectedCountries;
       country.direction = direction;
