@@ -13,9 +13,9 @@ const CurrentCountry = () => {
     setFlipped((flipped) => !flipped);
   };
   return (
-    <div className="w-full h-full max-w-xs m-auto p-5">
+    <div className="w-full max-w-xs mx-auto p-5">
       {countrySvg ? (
-        <div className="h-full flex justify-center items-center">
+        <div className="flex justify-center items-center">
           {enableFlag ? (
             <ReactCardFlip isFlipped={flipped}>
               <div className="w-40 h-40 flex">

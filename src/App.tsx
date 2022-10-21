@@ -100,8 +100,10 @@ function App() {
       <AppContext.Provider value={value}>
         <Header />
         <CurrentCountry />
-        <GuessPanels />
-        <Selections />
+        <div className="space-y-0">
+          <GuessPanels />
+          <Selections />
+        </div>
         <WikiLink />
         <Result />
         <Footer />
