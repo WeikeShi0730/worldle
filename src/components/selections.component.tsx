@@ -111,6 +111,12 @@ const Selections = () => {
       ...base,
       color: "white",
     }),
+    option: (base: any) => ({
+      ...base,
+      "&:hover": {
+        fontWeight: "bold",
+      },
+    }),
   };
 
   return (
