@@ -18,14 +18,14 @@ const CurrentCountry = () => {
         <div className="h-full flex justify-center items-center">
           {enableFlag ? (
             <ReactCardFlip isFlipped={flipped}>
-              <div className="w-64 h-64 flex">
+              <div className="w-40 h-40 flex">
                 <img
                   src={countrySvg.shape}
                   alt="Country Shape SVG"
                   onClick={handleClick}
                 />
               </div>
-              <div className="w-64 h-64 flex">
+              <div className="w-40 h-40 flex">
                 <img
                   src={countrySvg.flag}
                   alt="Country Flag SVG"
@@ -34,7 +34,7 @@ const CurrentCountry = () => {
               </div>
             </ReactCardFlip>
           ) : (
-            <div className="w-64 h-64 flex">
+            <div className="w-40 h-40 flex">
               <img
                 src={countrySvg.shape}
                 alt="Country Shape SVG"
