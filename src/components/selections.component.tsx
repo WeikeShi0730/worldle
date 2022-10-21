@@ -114,7 +114,7 @@ const Selections = () => {
     option: (base: any) => ({
       ...base,
       "&:hover": {
-        fontWeight: "bold",
+        fontWeight: "500",
       },
     }),
   };
