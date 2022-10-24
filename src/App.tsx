@@ -99,12 +99,12 @@ function App() {
     <div className="h-screen flex flex-col justify-between font-light">
       <AppContext.Provider value={value}>
         <Header />
-        <CurrentCountry />
         <div className="space-y-0">
+          <CurrentCountry />
           <GuessPanels />
           <Selections />
+          <WikiLink />
         </div>
-        <WikiLink />
         <Result />
         <Footer />
       </AppContext.Provider>
