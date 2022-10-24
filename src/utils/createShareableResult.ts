@@ -58,7 +58,7 @@ const createShareableResult = (
         : directionDictionary[direction as string]) +
       ",\n";
   }
-  resultString += "worldle-guess.vercel.app";
+  resultString += "https://worldle-guess.vercel.app";
   navigator.clipboard.writeText(resultString);
   return resultString;
 };
