@@ -22,13 +22,13 @@ const GuessPanel = ({ selectedCountry }: GuessPanelType) => {
       <div className="distance flex justify-center items-center w-3/12 border-2 mx-1 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
         {todayCountry.value !== undefined &&
         selectedCountry.value === todayCountry.value
-          ? "📍"
+          ? "🎯"
           : distance}
       </div>
       <div className="direction flex justify-center items-center w-2/12 border-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
         {todayCountry.value !== undefined &&
         selectedCountry.value === todayCountry.value
-          ? "📍"
+          ? "🎯"
           : selectedCountry.direction}
       </div>
     </div>
