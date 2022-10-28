@@ -79,7 +79,6 @@ const Selections = () => {
     setTimeout(() => {
       element?.classList.add("invisible");
       element?.classList.add("opacity-0");
-      // need optimize
     }, 1500);
   };
 

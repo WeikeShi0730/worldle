@@ -43,7 +43,9 @@ const CurrentCountry = () => {
             </div>
           )}
         </div>
-      ) : null}
+      ) : (
+        <div className="w-40 h-40 flex"></div>
+      )}
     </div>
   );
 };
