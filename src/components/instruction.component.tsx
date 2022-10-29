@@ -43,16 +43,16 @@ const Instruction = () => {
             <p>Each guess must be a valid country, territory, ...</p>
             <br />
             <p>
-              After each guess, you will be given a distance and direction hint
+              After each guess, you will be given a <span className="font-medium">distance and direction</span> hint
               to the target country.
             </p>
             <br />
             <p>
-              You can enable the option to click on the map to show the flag of
+              You can enable the option to click on the map to show the <span className="font-medium">flag</span> of
               the country, which would lower the difficulty of the game.
             </p>
             <br />
-            <p>The game refreshes once a day.</p>
+            <p>The game refreshes <span className="font-medium">once a day</span>.</p>
             <br />
             <p>Example:</p>
             <div className="">
