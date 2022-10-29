@@ -10,6 +10,10 @@ import Result from "./components/result.component";
 import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
 import { useCookies } from "react-cookie";
+import { inject } from "@vercel/analytics";
+
+// Make sure to call this only once in your app
+inject();
 
 interface contextType {
   todayCountry: CountryType;
