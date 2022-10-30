@@ -16,7 +16,7 @@ const GuessPanel = ({ selectedCountry }: GuessPanelType) => {
 
   return (
     <div className="flex text-center w-full h-fit min-h-[40px] my-1 rounded text-white text-sm md:text-base">
-      <div className="country flex justify-center items-center w-7/12 border-2 p-2 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
+      <div className="country flex justify-center items-center w-7/12 border-2 p-1 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
         {selectedCountry.label}
       </div>
       <div className="distance flex min-h-[40px] justify-center items-center w-3/12 border-2 mx-1 rounded shadow-md hover:shadow-gray-400 transform duration-200 ease-in-out">
