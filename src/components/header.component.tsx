@@ -1,5 +1,5 @@
 import Instruction from "./instruction.component";
-import Settings from "./setttings.component";
+import Settings from "./settings.component";
 
 const Header = () => {
   return (

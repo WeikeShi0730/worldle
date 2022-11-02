@@ -5,7 +5,8 @@ import { VscGear, VscClose } from "react-icons/vsc";
 
 const Settings = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const { enableFlag, setEnableFlag, unit, setUnit } = useContext(AppContext);
+  const { enableFlag, setEnableFlag, unit, setUnit, setCookie } =
+    useContext(AppContext);
   const ref = useRef<HTMLDivElement>(null);
   useClickOutside(ref, () => setOpen(false));
 
@@ -21,11 +22,11 @@ const Settings = () => {
     switch (e.currentTarget.value) {
       case "flag":
         setEnableFlag(!enableFlag);
-        sessionStorage.setItem("enableFlagSession", (!enableFlag).toString());
+        setCookie("enableFlagSession", JSON.stringify(!enableFlag));
         break;
       case "unit":
         setUnit(!unit);
-        sessionStorage.setItem("unitSession", (!unit).toString());
+        setCookie("unitSession", JSON.stringify(!unit));
         break;
       default:
         break;

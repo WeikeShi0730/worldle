@@ -54,16 +54,24 @@ function App() {
   const [cookies, setCookie] = useCookies([random.toString()]);
 
   useEffect(() => {
-    var enableFlagSession = sessionStorage.getItem("enableFlagSession");
+    var enableFlagSession = cookies["enableFlagSession"];
     var enableFlagToggle = true;
-    if (enableFlagSession === null || enableFlagSession === "false") {
+    if (
+      enableFlagSession === undefined ||
+      enableFlagSession === null ||
+      enableFlagSession === "false"
+    ) {
       enableFlagToggle = false;
     }
     setEnableFlag(enableFlagToggle);
 
-    var unitSession = sessionStorage.getItem("unitSession");
+    var unitSession = cookies["unitSession"];
     var unitToggle = true;
-    if (unitSession === null || unitSession === "false") {
+    if (
+      unitSession === undefined ||
+      enableFlagSession === null ||
+      unitSession === "false"
+    ) {
       unitToggle = false;
     }
     setUnit(unitToggle);
@@ -72,7 +80,6 @@ function App() {
       cookies && Object.keys(cookies).length !== 0
         ? cookies[random.toString() as string]
         : null;
-
     if (userTodayRecord !== undefined && userTodayRecord !== null) {
       setSelectedCountries(userTodayRecord);
       var count = userTodayRecord.filter((e: CountryType) => {
