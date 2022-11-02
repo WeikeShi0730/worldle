@@ -1,48 +1,20 @@
-import { useContext, useRef } from "react";
-import { AppContext } from "../App";
-import { FINISHED_WIN } from "../constants";
-import { useClickOutside } from "../utils/useClickOutside";
 import { VscClose } from "react-icons/vsc";
 
-const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
-  const { todayCountry, game, numGuesses } = useContext(AppContext);
-  const ref = useRef<HTMLDivElement>(null);
-  useClickOutside(ref, () => setOpen(false));
-
-  const handleClickClose = () => {
+const Modal = ({
+  setOpen,
+  children,
+}: {
+  setOpen: (open: boolean) => void;
+  children?: React.ReactNode;
+}) => {
+  const handleClickClose = (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
     setOpen(false);
   };
 
-  const message = () => {
-    return game === FINISHED_WIN ? (
-      numGuesses === 1 ? (
-        <div className="p-5 text-sm md:text-base">
-          You got it on the{" "}
-          <span className="text-base md:text-xl italic">first</span> try!
-        </div>
-      ) : numGuesses === 6 ? (
-        <div className="p-5 text-sm md:text-base">Oof, that was close.</div>
-      ) : (
-        <div className="p-5 text-sm md:text-base">
-          You got it in{" "}
-          <span className="text-base md:text-xl italic">{numGuesses} </span>
-          guesses.
-        </div>
-      )
-    ) : (
-      <div className="p-5 text-sm md:text-base text-center">
-        You didn't get it, the country is
-        <div className="text-base md:text-xl italic">{todayCountry.label}.</div>
-      </div>
-    );
-  };
-
   return (
-    <div
-      ref={ref}
-      className="fixed w-80 md:w-96 z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-200 text-white text-base rounded-lg backdrop-blur-md bg-opacity-20 shadow-md"
-    >
-      <div className="flex flex-col m-5 sm:m-10 text-white">
+    <div className="fixed w-80 md:w-96 z-10 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-200 text-white text-base rounded-lg backdrop-blur-md bg-opacity-20 shadow-md">
+      <div className="flex flex-col m-5 sm:m-10 text-white text-sm md:text-base">
         <button
           className="flex content-center items-center self-end text-lg md:text-2xl hover:bg-opacity-50 duration-200 hover:text-slate-700 font-light"
           onClick={handleClickClose}
@@ -50,7 +22,7 @@ const Modal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           <VscClose />
         </button>
         <div className="flex flex-col items-center justify-center">
-          {message()}
+          {children}
         </div>
       </div>
     </div>

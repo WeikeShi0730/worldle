@@ -36,6 +36,8 @@ export const AppContext = createContext<contextType>({} as contextType);
 
 function App() {
   const random = getTodaySeed();
+
+  // * useState
   const [todayCountry, setTodayCountry] = useState<CountryType>(
     {} as CountryType
   );
@@ -53,6 +55,7 @@ function App() {
   const [unit, setUnit] = useState<boolean>(true);
   const [cookies, setCookie] = useCookies([random.toString()]);
 
+  // * useEffect
   useEffect(() => {
     var enableFlagSession = cookies["enableFlagSession"];
     var enableFlagToggle = true;
