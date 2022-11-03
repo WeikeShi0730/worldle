@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useMemo } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { useClickOutside } from "../utils/useClickOutside";
 import { AppContext } from "../App";
 import Modal from "./modal.component";
@@ -31,7 +31,7 @@ const Settings = () => {
     }
   };
 
-  useMemo(() => {
+  useEffect(() => {
     var element = document.getElementById("modal-settings");
     if (open) {
       element?.classList.remove("invisible");

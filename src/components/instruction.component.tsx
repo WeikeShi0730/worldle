@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useClickOutside } from "../utils/useClickOutside";
 import Modal from "./modal.component";
 import { VscQuestion } from "react-icons/vsc";
@@ -13,7 +13,7 @@ const Instruction = () => {
     setOpen(() => !open);
   };
 
-  useMemo(() => {
+  useEffect(() => {
     var element = document.getElementById("modal-instruction");
     if (open) {
       element?.classList.remove("invisible");

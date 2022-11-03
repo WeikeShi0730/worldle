@@ -1,4 +1,4 @@
-import { useContext, useMemo, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import { FINISHED_LOSE, FINISHED_WIN } from "../constants";
 
@@ -15,7 +15,7 @@ const WikiLink = () => {
     }
   }, [todayCountry]);
 
-  useMemo(() => {
+  useEffect(() => {
     if (game === FINISHED_LOSE || game === FINISHED_WIN) {
       var element = document.getElementById("wikilink");
       element?.classList.remove("invisible");
