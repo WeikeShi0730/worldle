@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext } from "react";
 import { useClickOutside } from "../utils/useClickOutside";
 import { AppContext } from "../App";
 import Modal from "./modal.component";
@@ -13,9 +13,9 @@ const Settings = () => {
 
   const handleMarkClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
-
     setOpen(() => !open);
   };
+
   const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     switch (e.currentTarget.value) {
       case "flag":
@@ -31,17 +31,6 @@ const Settings = () => {
     }
   };
 
-  useEffect(() => {
-    var element = document.getElementById("modal-settings");
-    if (open) {
-      element?.classList.remove("invisible");
-      element?.classList.remove("opacity-0");
-    } else {
-      element?.classList.add("invisible");
-      element?.classList.add("opacity-0");
-    }
-  }, [open]);
-
   return (
     <div ref={ref}>
       <div className="flex content-center items-center hover:bg-opacity-50 duration-200 text-slate-300 hover:text-white font-light">
@@ -50,7 +39,7 @@ const Settings = () => {
         </button>
       </div>
 
-      <Modal setOpen={setOpen} id="modal-settings">
+      <Modal setOpen={setOpen} open={open} id="modal-settings">
         <p className="w-full border-b text-center text-lg md:text-2xl">
           Settings
         </p>

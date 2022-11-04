@@ -1,11 +1,14 @@
+import { useEffect } from "react";
 import { VscClose } from "react-icons/vsc";
 
 const Modal = ({
   setOpen,
+  open,
   children,
   id,
 }: {
   setOpen: (open: boolean) => void;
+  open: boolean;
   children?: React.ReactNode;
   id: string;
 }) => {
@@ -13,6 +16,17 @@ const Modal = ({
     event.preventDefault();
     setOpen(false);
   };
+
+  useEffect(() => {
+    var element = document.getElementById(id);
+    if (open) {
+      element?.classList.remove("invisible");
+      element?.classList.remove("opacity-0");
+    } else {
+      element?.classList.add("invisible");
+      element?.classList.add("opacity-0");
+    }
+  }, [open, id]);
 
   return (
     <div

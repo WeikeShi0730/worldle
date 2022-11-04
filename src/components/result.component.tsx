@@ -27,17 +27,6 @@ const Result = () => {
     }
   }, [numGuesses, game, setGame, selectedCountries, todayCountry]);
 
-  useEffect(() => {
-    var element = document.getElementById("modal-result");
-    if (open) {
-      element?.classList.remove("invisible");
-      element?.classList.remove("opacity-0");
-    } else {
-      element?.classList.add("invisible");
-      element?.classList.add("opacity-0");
-    }
-  }, [open]);
-
   const message = () => {
     return game === FINISHED_WIN ? (
       numGuesses === 1 ? (
@@ -65,7 +54,7 @@ const Result = () => {
   return (
     <div ref={ref}>
       {game === IN_PROCESS ? null : (
-        <Modal setOpen={setOpen} id="modal-result">
+        <Modal setOpen={setOpen} open={open} id="modal-result">
           <div className="w-full text-center">{message()}</div>
         </Modal>
       )}

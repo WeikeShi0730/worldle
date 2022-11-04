@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useClickOutside } from "../utils/useClickOutside";
 import Modal from "./modal.component";
 import { VscQuestion } from "react-icons/vsc";
@@ -13,17 +13,6 @@ const Instruction = () => {
     setOpen(() => !open);
   };
 
-  useEffect(() => {
-    var element = document.getElementById("modal-instruction");
-    if (open) {
-      element?.classList.remove("invisible");
-      element?.classList.remove("opacity-0");
-    } else {
-      element?.classList.add("invisible");
-      element?.classList.add("opacity-0");
-    }
-  }, [open]);
-
   return (
     <div ref={ref}>
       <div className="flex content-center items-center hover:bg-opacity-50 duration-200 text-slate-300 hover:text-white font-light">
@@ -31,7 +20,7 @@ const Instruction = () => {
           <VscQuestion />
         </button>
       </div>
-      <Modal setOpen={setOpen} id="modal-instruction">
+      <Modal setOpen={setOpen} open={open} id="modal-instruction">
         <p className="w-full border-b text-center text-lg md:text-2xl">
           How to play
         </p>
