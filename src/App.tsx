@@ -28,7 +28,7 @@ interface contextType {
   setEnableFlag: (enableFlag: boolean) => void;
   unit: boolean;
   setUnit: (unit: boolean) => void;
-  setCookie: any;
+  setCookie: (name: string, values: string, options?: any) => void;
   random: number;
 }
 
@@ -90,7 +90,8 @@ function App() {
       }).length;
       setNumGuesses(count);
     }
-  }, [cookies, random]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const value = {
     todayCountry,

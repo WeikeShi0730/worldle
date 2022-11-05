@@ -16,15 +16,15 @@ const Settings = () => {
     setOpen(() => !open);
   };
 
-  const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    switch (e.currentTarget.value) {
+  const handleToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    switch (event.currentTarget.value) {
       case "flag":
         setEnableFlag(!enableFlag);
-        setCookie("enableFlagSession", JSON.stringify(!enableFlag));
+        setCookie("enableFlagSession", (!enableFlag).toString());
         break;
       case "unit":
         setUnit(!unit);
-        setCookie("unitSession", JSON.stringify(!unit));
+        setCookie("unitSession", (!unit).toString());
         break;
       default:
         break;
