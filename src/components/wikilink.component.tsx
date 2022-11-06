@@ -28,8 +28,11 @@ const WikiLink = () => {
       className="flex justify-center items-center text-white text-xs md:text-sm invisible"
     >
       <a href={link} rel="noopener noreferrer" target="_blank">
-        <div className="link-underline link-underline-black">
-          📚 On Wikipedia
+        <div>
+          📚{" "}
+          <span className="link-underline link-underline-black">
+            On Wikipedia
+          </span>
         </div>
       </a>
     </div>
