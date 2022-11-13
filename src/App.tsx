@@ -119,8 +119,8 @@ function App() {
           <GuessPanels />
           <Selections />
           <WikiLink />
+          <Result />
         </div>
-        <Result />
         <Footer />
       </AppContext.Provider>
     </div>
