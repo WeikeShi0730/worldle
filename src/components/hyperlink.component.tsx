@@ -29,7 +29,7 @@ const Hyperlink = () => {
   }, [game]);
 
   return (
-    <div
+    <span
       id="Hyperlink"
       className="flex justify-center items-center gap-x-4 text-white text-xs md:text-sm invisible"
     >
@@ -49,7 +49,7 @@ const Hyperlink = () => {
           </span>
         </div>
       </a>
-    </div>
+    </span>
   );
 };
 export default Hyperlink;
