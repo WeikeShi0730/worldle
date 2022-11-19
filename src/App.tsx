@@ -5,7 +5,7 @@ import getTodaySeed from "./utils/getTodaySeed";
 import CurrentCountry from "./components/current-country.component";
 import GuessPanels from "./components/guess-panels.component";
 import Selections from "./components/selections.component";
-import WikiLink from "./components/wikilink.component";
+import Hyperlink from "./components/hyperlink.component";
 import Result from "./components/result.component";
 import { IN_PROCESS } from "./constants";
 import Footer from "./components/footer.component";
@@ -118,7 +118,7 @@ function App() {
           <CurrentCountry />
           <GuessPanels />
           <Selections />
-          <WikiLink />
+          <Hyperlink />
           <Result />
         </div>
         <Footer />
