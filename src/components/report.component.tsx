@@ -40,7 +40,16 @@ const Report = () => {
     var maxStreak = cockieFound ? cookies.statistics.maxStreak : 0;
     var totalPlayed = cockieFound ? cookies.statistics.totalPlayed : 0;
     var totalWin = cockieFound ? cookies.statistics.totalWin : 0;
+    var winPerc = cockieFound ? totalWin / totalPlayed : 0;
     var history = cockieFound ? cookies.statistics.history : [];
+    setStatistics({
+      currentStreak,
+      maxStreak,
+      totalPlayed,
+      totalWin,
+      winPerc,
+      history,
+    });
 
     if (game !== IN_PROCESS && !history.includes(random)) {
       totalPlayed += 1;
@@ -53,7 +62,7 @@ const Report = () => {
           maxStreak = currentStreak;
         }
       }
-      var winPerc = totalWin / totalPlayed;
+      winPerc = totalWin / totalPlayed;
       history.push(random);
       const newStatistics = {
         currentStreak,
@@ -63,14 +72,12 @@ const Report = () => {
         winPerc,
         history,
       };
-      setStatistics(newStatistics);
-
       setCookie("statistics", JSON.stringify(newStatistics), {
         maxAge: 86400,
       });
     }
-    console.log(cookies);
-  }, [game]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [game, cookies]);
 
   return (
     <div ref={ref}>
@@ -84,27 +91,20 @@ const Report = () => {
           Statistics
         </p>
         <br />
-        <p>
-          Guess the <span className="font-medium">WORLDLE</span> in 6 guesses.
-        </p>
-        <br />
-        <p>Each guess must be a valid country, territory, ...</p>
-        <br />
-        <p>
-          After each guess, you will be given a{" "}
-          <span className="font-medium">distance and direction</span> hint to
-          the target country.
-        </p>
-        <br />
-        <p>
-          You can enable the option to click on the map to show the{" "}
-          <span className="font-medium">flag</span> of the country, which would
-          lower the difficulty of the game.
-        </p>
-        <br />
-        <p>
-          The game refreshes <span className="font-medium">once a day</span>.
-        </p>
+        <div className="flex flex-col">
+          <div className="flex justify-between">
+            Current Streak <span>{statistics.currentStreak}</span>
+          </div>
+          <div className="flex justify-between">
+            Max Streak<span>{statistics.maxStreak}</span>
+          </div>
+          <div className="flex justify-between">
+            Win <span>{Math.floor(statistics.winPerc * 100)}%</span>
+          </div>
+          <div className="flex justify-between">
+            Total Played<span>{statistics.totalPlayed}</span>
+          </div>
+        </div>
         <br />
       </Modal>
     </div>
