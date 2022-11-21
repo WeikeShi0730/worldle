@@ -41,6 +41,7 @@ const Report = () => {
     var totalPlayed = cockieFound ? cookies.statistics.totalPlayed : 0;
     var totalWin = cockieFound ? cookies.statistics.totalWin : 0;
     var history = cockieFound ? cookies.statistics.history : [];
+
     if (game !== IN_PROCESS && !history.includes(random)) {
       totalPlayed += 1;
       if (game === FINISHED_LOSE) {
@@ -54,7 +55,7 @@ const Report = () => {
       }
       var winPerc = totalWin / totalPlayed;
       history.push(random);
-      const statistics = {
+      const newStatistics = {
         currentStreak,
         maxStreak,
         totalPlayed,
@@ -62,12 +63,13 @@ const Report = () => {
         winPerc,
         history,
       };
-      setStatistics(statistics);
+      setStatistics(newStatistics);
 
-      setCookie("statistics", JSON.stringify(statistics), {
+      setCookie("statistics", JSON.stringify(newStatistics), {
         maxAge: 86400,
       });
     }
+    console.log(cookies);
   }, [game]);
 
   return (
