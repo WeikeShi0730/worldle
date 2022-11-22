@@ -73,7 +73,7 @@ const Report = () => {
         history,
       };
       setCookie("statistics", JSON.stringify(newStatistics), {
-        maxAge: 86400,
+        maxAge: 315360000,
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
