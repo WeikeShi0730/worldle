@@ -93,16 +93,22 @@ const Report = () => {
         <br />
         <div className="flex flex-col">
           <div className="flex justify-between">
-            Current Streak <span>{statistics.currentStreak}</span>
+            Current Streak{" "}
+            <span className=" font-medium">{statistics.currentStreak}</span>
           </div>
           <div className="flex justify-between">
-            Max Streak<span>{statistics.maxStreak}</span>
+            Max Streak
+            <span className=" font-medium">{statistics.maxStreak}</span>
           </div>
           <div className="flex justify-between">
-            Win <span>{Math.floor(statistics.winPerc * 100)}%</span>
+            Win{" "}
+            <span className=" font-medium">
+              {Math.floor(statistics.winPerc * 100)}%
+            </span>
           </div>
           <div className="flex justify-between">
-            Total Played<span>{statistics.totalPlayed}</span>
+            Total Played
+            <span className=" font-medium">{statistics.totalPlayed}</span>
           </div>
         </div>
         <br />
