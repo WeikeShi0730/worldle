@@ -111,7 +111,6 @@ const Report = () => {
             <span className=" font-medium">{statistics.totalPlayed}</span>
           </div>
         </div>
-        <br />
       </Modal>
     </div>
   );
