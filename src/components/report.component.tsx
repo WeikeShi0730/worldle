@@ -64,7 +64,6 @@ const Report = () => {
         currentStreak += 1;
         totalWin += 1;
         guessDistribution[numGuesses - 1] += 1;
-        console.log(guessDistribution);
         if (currentStreak > maxStreak) {
           maxStreak = currentStreak;
         }
@@ -118,13 +117,13 @@ const Report = () => {
             Total Played
             <span className=" font-medium">{statistics.totalPlayed}</span>
           </div>
-          <div className="flex justify-between">
+          <div className="">
             Distribution
-            <span>
+            <div>
               {statistics.guessDistribution?.map((e: number, i: number) => {
                 return <div key={i}>{e}</div>;
               })}
-            </span>
+            </div>
           </div>
         </div>
       </Modal>
