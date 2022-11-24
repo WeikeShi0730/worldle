@@ -3,7 +3,7 @@ import { CgWebsite } from "react-icons/cg";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col my-5 text-white">
+    <div id="test" className="flex flex-col my-5 text-white">
       <div className="text-xs md:text-sm text-center">Created by</div>
       <div className="text-xs md:text-sm flex justify-center items-center gap-x-1">
         <a

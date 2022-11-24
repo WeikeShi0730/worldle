@@ -14,6 +14,7 @@ const Report = () => {
     totalPlayed: number;
     totalWin: number;
     winPerc: number;
+    guessDistribution: number[];
     history: number[];
   }>({
     currentStreak: 0,
@@ -21,11 +22,12 @@ const Report = () => {
     totalPlayed: 0,
     totalWin: 0,
     winPerc: 0,
+    guessDistribution: [],
     history: [],
   });
   const ref = useRef<HTMLDivElement>(null);
   useClickOutside(ref, () => setOpen(false));
-  const { game, random } = useContext(AppContext);
+  const { game, random, numGuesses } = useContext(AppContext);
 
   const handleMarkClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
@@ -33,7 +35,6 @@ const Report = () => {
   };
 
   const [cookies, setCookie] = useCookies();
-
   useEffect(() => {
     const cockieFound = cookies && cookies.statistics;
     var currentStreak = cockieFound ? cookies.statistics.currentStreak : 0;
@@ -41,6 +42,9 @@ const Report = () => {
     var totalPlayed = cockieFound ? cookies.statistics.totalPlayed : 0;
     var totalWin = cockieFound ? cookies.statistics.totalWin : 0;
     var winPerc = cockieFound ? totalWin / totalPlayed : 0;
+    var guessDistribution = cockieFound
+      ? cookies.statistics.guessDistribution
+      : [0, 0, 0, 0, 0, 0];
     var history = cockieFound ? cookies.statistics.history : [];
     setStatistics({
       currentStreak,
@@ -48,6 +52,7 @@ const Report = () => {
       totalPlayed,
       totalWin,
       winPerc,
+      guessDistribution,
       history,
     });
 
@@ -58,6 +63,8 @@ const Report = () => {
       } else if (game === FINISHED_WIN) {
         currentStreak += 1;
         totalWin += 1;
+        guessDistribution[numGuesses - 1] += 1;
+        console.log(guessDistribution);
         if (currentStreak > maxStreak) {
           maxStreak = currentStreak;
         }
@@ -70,6 +77,7 @@ const Report = () => {
         totalPlayed,
         totalWin,
         winPerc,
+        guessDistribution,
         history,
       };
       setCookie("statistics", JSON.stringify(newStatistics), {
@@ -109,6 +117,14 @@ const Report = () => {
           <div className="flex justify-between">
             Total Played
             <span className=" font-medium">{statistics.totalPlayed}</span>
+          </div>
+          <div className="flex justify-between">
+            Distribution
+            <span>
+              {statistics.guessDistribution?.map((e: number, i: number) => {
+                return <div key={i}>{e}</div>;
+              })}
+            </span>
           </div>
         </div>
       </Modal>
