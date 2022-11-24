@@ -33,8 +33,8 @@ const Report = () => {
     event.preventDefault();
     setOpen(() => !open);
   };
-  const [cookies, setCookie, removeCookie] = useCookies();
-  removeCookie("statistics");
+  const [cookies, setCookie] = useCookies();
+
   useEffect(() => {
     const cockieFound = cookies && cookies.statistics;
     var currentStreak = cockieFound ? cookies.statistics.currentStreak : 0;
