@@ -101,27 +101,43 @@ const Report = () => {
         <div className="flex flex-col">
           <div className="flex justify-between">
             Current Streak{" "}
-            <span className=" font-medium">{statistics.currentStreak}</span>
+            <span className="font-medium">{statistics.currentStreak}</span>
           </div>
           <div className="flex justify-between">
             Max Streak
-            <span className=" font-medium">{statistics.maxStreak}</span>
+            <span className="font-medium">{statistics.maxStreak}</span>
           </div>
           <div className="flex justify-between">
             Win{" "}
-            <span className=" font-medium">
+            <span className="font-medium">
               {Math.floor(statistics.winPerc * 100)}%
             </span>
           </div>
           <div className="flex justify-between">
             Total Played
-            <span className=" font-medium">{statistics.totalPlayed}</span>
+            <span className="font-medium">{statistics.totalPlayed}</span>
           </div>
           <div className="">
             Distribution
-            <div>
+            <div className="flex justify-between">
               {statistics.guessDistribution?.map((e: number, i: number) => {
-                return <div key={i}>{e}</div>;
+                return (
+                  <div className="flex flex-col" key={i}>
+                    <div>
+                      {i + 1}
+                      <sup>
+                        {i === 0
+                          ? "st"
+                          : i === 1
+                          ? "nd"
+                          : i === 2
+                          ? "rd"
+                          : "th"}
+                      </sup>
+                    </div>
+                    <div className="font-medium">{e}</div>
+                  </div>
+                );
               })}
             </div>
           </div>
