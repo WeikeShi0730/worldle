@@ -98,48 +98,43 @@ const Report = () => {
           Statistics
         </p>
         <br />
-        <div className="flex flex-col">
-          <div className="flex justify-between">
-            Current Streak{" "}
+        <div className="w-full grid grid-cols-4">
+          <div className="flex flex-col text-center">
             <span className="font-medium">{statistics.currentStreak}</span>
+            Current Streak
           </div>
-          <div className="flex justify-between">
-            Max Streak
+          <div className="flex flex-col text-center">
             <span className="font-medium">{statistics.maxStreak}</span>
+            Max Streak
           </div>
-          <div className="flex justify-between">
-            Win{" "}
+          <div className="flex flex-col text-center">
             <span className="font-medium">
               {Math.floor(statistics.winPerc * 100)}%
             </span>
+            Win Percent
           </div>
-          <div className="flex justify-between">
-            Total Played
+          <div className="flex flex-col text-center">
             <span className="font-medium">{statistics.totalPlayed}</span>
+            Total Played
           </div>
-          <div className="">
-            Distribution
-            <div className="flex justify-between">
-              {statistics.guessDistribution?.map((e: number, i: number) => {
-                return (
-                  <div className="flex flex-col" key={i}>
-                    <div>
-                      {i + 1}
-                      <sup>
-                        {i === 0
-                          ? "st"
-                          : i === 1
-                          ? "nd"
-                          : i === 2
-                          ? "rd"
-                          : "th"}
-                      </sup>
-                    </div>
-                    <div className="font-medium">{e}</div>
+        </div>
+        <br />
+        <div className="">
+          <div className="flex justify-center">Distribution</div>
+          <div className="flex justify-between">
+            {statistics.guessDistribution?.map((e: number, i: number) => {
+              return (
+                <div className="flex flex-col" key={i}>
+                  <div className="font-medium">{e}</div>
+                  <div>
+                    {i + 1}
+                    <sup>
+                      {i === 0 ? "st" : i === 1 ? "nd" : i === 2 ? "rd" : "th"}
+                    </sup>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Modal>
