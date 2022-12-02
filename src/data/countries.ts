@@ -835,12 +835,6 @@ export const countries: CountryType[] = [
     label: "Madagascar",
   },
   {
-    value: "MH",
-    latitude: 7.131474,
-    longitude: 171.184478,
-    label: "Marshall Islands",
-  },
-  {
     value: "MK",
     latitude: 41.608635,
     longitude: 21.745275,

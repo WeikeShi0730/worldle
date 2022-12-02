@@ -10,7 +10,7 @@ const useToday = () => {
   const random = getTodaySeed();
   const index = Math.floor(random * countries.length);
   const todayCountry = countries[index];
-
+  console.log(todayCountry);
   useEffect(() => {
     const dynamicImport = async () => {
       const shape = await import(
