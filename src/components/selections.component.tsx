@@ -130,9 +130,6 @@ const Selections = () => {
             setCountry(country as CountryType);
           }}
           onKeyDown={(e) => {
-            if (e.key === " ") {
-              e.preventDefault();
-            }
             if (
               e.key === "Enter" &&
               country.value !== undefined &&
