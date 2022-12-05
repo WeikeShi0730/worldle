@@ -129,6 +129,7 @@ const Selections = () => {
           onChange={(country) => {
             setCountry(country as CountryType);
           }}
+          onInputChange={() => setCountry({} as CountryType)}
           onKeyDown={(e) => {
             if (
               e.key === "Enter" &&
@@ -138,7 +139,6 @@ const Selections = () => {
               console.log(country.value);
               handleSubmit();
             }
-
             if (e.key === "Backspace") {
               setCountry({} as CountryType);
             }
