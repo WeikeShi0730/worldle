@@ -136,7 +136,6 @@ const Selections = () => {
               country.value !== undefined &&
               country.value !== ""
             ) {
-              console.log(country.value);
               handleSubmit();
             }
             if (e.key === "Backspace") {
