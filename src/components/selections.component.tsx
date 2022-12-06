@@ -126,10 +126,10 @@ const Selections = () => {
           isDisabled={game === IN_PROCESS ? false : true}
           options={countries}
           value={country}
-          onChange={(country) => {
-            setCountry(country as CountryType);
+          onInputChange={(_, action) => {
+            if (action.action === "input-change") setCountry({} as CountryType);
           }}
-          onInputChange={() => setCountry({} as CountryType)}
+          onChange={(country) => setCountry(country as CountryType)}
           onKeyDown={(e) => {
             if (
               e.key === "Enter" &&
