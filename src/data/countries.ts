@@ -865,12 +865,6 @@ export const countries: CountryType[] = [
     label: "Macau",
   },
   {
-    value: "MP",
-    latitude: 17.33083,
-    longitude: 145.38469,
-    label: "Northern Mariana Islands",
-  },
-  {
     value: "MQ",
     latitude: 14.641528,
     longitude: -61.024174,
