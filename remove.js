@@ -1,5 +1,5 @@
-import { CountryType } from "../interfaces";
-export const countries: CountryType[] = [
+import * as fs from "fs";
+const countries = [
   {
     value: "AD",
     latitude: 42.546245,
@@ -1417,3 +1417,23 @@ export const countries: CountryType[] = [
     label: "Zimbabwe",
   },
 ];
+
+const dir = fs.opendirSync("src/data/countries-flag-svg");
+const values = countries.map((country) => country["value"]);
+var dirNames = [];
+let dirent;
+while ((dirent = dir.readSync()) !== null) {
+  dirNames.push(dirent.name.split(".")[0].toUpperCase());
+}
+// for (const value of values) {
+//   if (!dirNames.includes(value)) {
+//     console.log(value);
+//   }
+// }
+
+for (const dirName of dirNames) {
+  if (!values.includes(dirName)) {
+    console.log(dirName);
+  }
+}
+dir.closeSync();
